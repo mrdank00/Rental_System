@@ -43,18 +43,6 @@ Partial Class RecieveRentals
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.gvRentals = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.gvRentalConfig = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtPrice = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtQty = New System.Windows.Forms.TextBox()
-        Me.txtAmt = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,6 +52,18 @@ Partial Class RecieveRentals
         Me.Category = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.gvRentalConfig = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtQty = New System.Windows.Forms.TextBox()
+        Me.txtAmt = New System.Windows.Forms.TextBox()
+        Me.txtRetuned = New System.Windows.Forms.TextBox()
+        Me.txtMissing = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentalConfig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,7 +93,7 @@ Partial Class RecieveRentals
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(885, 236)
+        Me.Label14.Location = New System.Drawing.Point(889, 236)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(147, 17)
         Me.Label14.TabIndex = 62
@@ -227,6 +227,7 @@ Partial Class RecieveRentals
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gvRentals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.gvRentals.BackgroundColor = System.Drawing.Color.White
         Me.gvRentals.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gvRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.gvRentals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -280,6 +281,69 @@ Partial Class RecieveRentals
         Me.gvRentals.TabIndex = 38
         Me.gvRentals.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ItemName"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 110
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Price"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 69
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "QtyRented"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 112
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "QtyReturned"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 127
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "QtyMissing"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 115
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Amount"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 92
+        '
+        'Category
+        '
+        Me.Category.HeaderText = "Category"
+        Me.Category.Name = "Category"
+        Me.Category.ReadOnly = True
+        Me.Category.Width = 101
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Colour"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 82
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Size"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 62
+        '
         'gvRentalConfig
         '
         Me.gvRentalConfig.AllowCustomTheming = False
@@ -289,6 +353,7 @@ Partial Class RecieveRentals
         Me.gvRentalConfig.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.gvRentalConfig.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.gvRentalConfig.BackgroundColor = System.Drawing.Color.White
         Me.gvRentalConfig.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gvRentalConfig.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.gvRentalConfig.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -405,21 +470,21 @@ Partial Class RecieveRentals
         Me.txtAmt.Size = New System.Drawing.Size(80, 37)
         Me.txtAmt.TabIndex = 43
         '
-        'TextBox1
+        'txtRetuned
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(470, 89)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(85, 37)
-        Me.TextBox1.TabIndex = 67
+        Me.txtRetuned.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRetuned.Location = New System.Drawing.Point(470, 89)
+        Me.txtRetuned.Name = "txtRetuned"
+        Me.txtRetuned.Size = New System.Drawing.Size(85, 37)
+        Me.txtRetuned.TabIndex = 67
         '
-        'TextBox2
+        'txtMissing
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(561, 89)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(85, 37)
-        Me.TextBox2.TabIndex = 69
+        Me.txtMissing.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMissing.Location = New System.Drawing.Point(561, 89)
+        Me.txtMissing.Name = "txtMissing"
+        Me.txtMissing.Size = New System.Drawing.Size(85, 37)
+        Me.txtMissing.TabIndex = 69
         '
         'Label4
         '
@@ -441,77 +506,14 @@ Partial Class RecieveRentals
         Me.Label6.TabIndex = 70
         Me.Label6.Text = "Price"
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ItemName"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 110
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Price"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 69
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "QtyRented"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 112
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "QtyReturned"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 127
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "QtyMissing"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 115
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Amount"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 92
-        '
-        'Category
-        '
-        Me.Category.HeaderText = "Category"
-        Me.Category.Name = "Category"
-        Me.Category.ReadOnly = True
-        Me.Category.Width = 101
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Colour"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 82
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Size"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 62
-        '
         'RecieveRentals
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtMissing)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtRetuned)
         Me.Controls.Add(Me.lblinvoice)
         Me.Controls.Add(Me.cbCustname)
         Me.Controls.Add(Me.Label14)
@@ -566,8 +568,8 @@ Partial Class RecieveRentals
     Friend WithEvents Label1 As Label
     Friend WithEvents txtQty As TextBox
     Friend WithEvents txtAmt As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtRetuned As TextBox
+    Friend WithEvents txtMissing As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn

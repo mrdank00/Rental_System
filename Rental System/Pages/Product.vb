@@ -1,6 +1,17 @@
 ﻿
+Imports System.Data.SqlClient
 Public Class Product
     Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
+
+        cmd = New SqlCommand("select itemname,category,colour,size from Stockmast where itemname='" + txtname.Text + "' and category='" + cbCat.Text + "'", RentCon)
+        da = New SqlDataAdapter(cmd)
+        tbl = New DataTable
+        da.Fill(tbl)
+        If tbl.Rows.Count <> 0 Then
+            MsgBox("Item Name already Exits")
+            Exit Sub
+        End If
+
         Insert("insert into Stockmast(Itemname,price,Qty,category,colour,Size) values('" + txtname.Text + "','" + txtPrice.Text + "','" + txtqty.Text + "','" + cbCat.Text + "','" + cbcolour.Text + "','" + cbSize.Text + "')")
         Clear()
         Display()

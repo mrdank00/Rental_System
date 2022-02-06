@@ -58,7 +58,7 @@ Public Class Rental
         For Each row As DataGridViewRow In gvRentals.Rows
             Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
         Next
-
+        Clear()
     End Sub
     Sub invoiceno()
         If RentCon.State = ConnectionState.Closed Then
@@ -75,5 +75,15 @@ Public Class Rental
             lblinvoice.Text = tbl.Rows(index)(0).ToString
         End If
         RentCon.Close()
+    End Sub
+    Public Sub Clear()
+        For Each control As Control In Me.Controls
+            If TypeOf control Is TextBox Then
+                control.Text = ""
+            End If
+            If TypeOf control Is ComboBox Then
+                control.Text = ""
+            End If
+        Next
     End Sub
 End Class
