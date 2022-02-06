@@ -1,10 +1,12 @@
-﻿Public Class Rental
+﻿Imports System.Data.SqlClient
+Public Class Rental
     Private Sub Rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
+        invoiceno()
     End Sub
     Sub display()
         Reload("Select * from Stockmast", BunifuDataGridView1)
-        ComboFeed("Select name from customers", ComboBox1, 0)
+        ComboFeed("Select name from customers", cbCustname, 0)
     End Sub
 
     Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
@@ -46,5 +48,32 @@
             sum += gvRentals.Rows(k).Cells(3).Value
         Next
         lblTotal.Text = sum
+    End Sub
+
+    Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
+        Insert("insert into Rentalconfig(Customername,location,contact,total) values('" + cbCustname.Text + "','" + txtLocation.Text + "','" + txtContact.Text + "','" + lblTotal.Text + "')")
+
+        invoiceno()
+
+        For Each row As DataGridViewRow In gvRentals.Rows
+            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
+        Next
+
+    End Sub
+    Sub invoiceno()
+        If RentCon.State = ConnectionState.Closed Then
+            RentCon.Open()
+        End If
+        cmd = New SqlCommand("select invoiceno from rentalconfig", RentCon)
+        da = New SqlDataAdapter(cmd)
+        tbl = New DataTable
+        da.Fill(tbl)
+        If tbl.Rows.Count = 0 Then
+            lblinvoice.Text = 1
+        Else
+            Dim index = tbl.Rows.Count() - 1
+            lblinvoice.Text = tbl.Rows(index)(0).ToString
+        End If
+        RentCon.Close()
     End Sub
 End Class

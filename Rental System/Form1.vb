@@ -16,4 +16,7 @@
 
     End Sub
 
+    Private Sub BunifuButton25_Click(sender As Object, e As EventArgs) Handles BunifuButton25.Click
+        BunifuPages1.SetPage("RentalReturns")
+    End Sub
 End Class

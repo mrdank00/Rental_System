@@ -307,6 +307,12 @@
     <Compile Include="Pages\Product.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Pages\RecieveRentals.Designer.vb">
+      <DependentUpon>RecieveRentals.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RecieveRentals.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Pages\Rental.Designer.vb">
       <DependentUpon>Rental.vb</DependentUpon>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Product.resx">
       <DependentUpon>Product.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\RecieveRentals.resx">
+      <DependentUpon>RecieveRentals.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Rental.resx">
       <DependentUpon>Rental.vb</DependentUpon>
