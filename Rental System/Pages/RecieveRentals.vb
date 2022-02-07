@@ -2,7 +2,7 @@
 Public Class RecieveRentals
 
     Sub Display()
-        Reload("select * from rentalconfig", gvRentalConfig)
+        Reload("select * from rentalconfig where status ='" + "Booked" + "'", gvRentalConfig)
     End Sub
 
     Private Sub RecieveRentals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -23,7 +23,7 @@ Public Class RecieveRentals
             txtContact.Text = tbl.Rows(0)(2).ToString
             txtLocation.Text = tbl.Rows(0)(3).ToString
             For k = 0 To tbl.Rows.Count - 1
-                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(6).ToString, tbl.Rows(k)(5).ToString, "", "", 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
+                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(6).ToString, "", "", 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -33,10 +33,15 @@ Public Class RecieveRentals
     End Sub
 
     Private Sub gvRentals_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles gvRentals.CellClick
-        Dim row As DataGridViewRow = gvRentals.Rows(e.RowIndex)
-        txtQty.Text = row.Cells(2).Value.ToString()
-        txtPrice.Text = row.Cells(1).Value.ToString()
-        lblItemName.Text = row.Cells(0).Value.ToString()
+        Try
+            Dim row As DataGridViewRow = gvRentals.Rows(e.RowIndex)
+            txtQty.Text = row.Cells(2).Value.ToString()
+            txtPrice.Text = row.Cells(1).Value.ToString()
+            lblItemName.Text = row.Cells(0).Value.ToString()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub txtRetuned_TextChanged(sender As Object, e As EventArgs) Handles txtRetuned.TextChanged
@@ -74,6 +79,7 @@ Public Class RecieveRentals
             sum += gvRentals.Rows(k).Cells(5).Value
         Next
         lblTotal.Text = sum
+        Clear()
     End Sub
 
     Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
@@ -91,8 +97,23 @@ Public Class RecieveRentals
                 .ExecuteNonQuery()
             End With
         Next
+        For k = 0 To gvRentals.RowCount - 1
+            If RentCon.State = ConnectionState.Closed Then
+                RentCon.Open()
+            End If
+            Dim sqll = "Select * from StockMast where itemname='" + gvRentals.Rows(k).Cells(0).Value + "'"
+            cmd = New SqlCommand(sqll, RentCon)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                Dim query = "update StockMast set qty = '" & dr.Item("Qty") + gvRentals.Rows(k).Cells(3).Value & "' where itemname= '" & gvRentals.Rows(k).Cells(0).Value & "'"
+                cmd = New SqlCommand(query, RentCon)
+                cmd.ExecuteNonQuery()
+            End While
+        Next
+        Insert("update RentalConfig set status='" + "Returned" + "' where invoiceno='" + lblinvoice.Text + "'")
+        gvRentals.Rows.Clear()
         Clear()
-        MsgBox("Saved")
+        BunifuSnackbar1.Show(Me.FindForm, "sucess")
     End Sub
 
     Private Sub gvRentals_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles gvRentals.RowsAdded
@@ -108,4 +129,6 @@ Public Class RecieveRentals
             End If
         Next
     End Sub
+
+
 End Class

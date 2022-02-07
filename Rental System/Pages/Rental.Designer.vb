@@ -22,6 +22,7 @@ Partial Class Rental
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -66,6 +67,9 @@ Partial Class Rental
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.cbCustname = New System.Windows.Forms.ComboBox()
         Me.lblinvoice = New System.Windows.Forms.Label()
+        Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -523,10 +527,117 @@ Partial Class Rental
         Me.lblinvoice.TabIndex = 35
         Me.lblinvoice.Text = "InvoiceNO"
         '
+        'BunifuSnackbar1
+        '
+        Me.BunifuSnackbar1.AllowDragging = False
+        Me.BunifuSnackbar1.AllowMultipleViews = True
+        Me.BunifuSnackbar1.ClickToClose = True
+        Me.BunifuSnackbar1.DoubleClickToClose = True
+        Me.BunifuSnackbar1.DurationAfterIdle = 3000
+        Me.BunifuSnackbar1.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.ErrorOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.ErrorOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.ErrorOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.ErrorOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.ErrorOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.ErrorOptions.Icon = CType(resources.GetObject("resource.Icon"), System.Drawing.Image)
+        Me.BunifuSnackbar1.ErrorOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.FadeCloseIcon = False
+        Me.BunifuSnackbar1.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner
+        Me.BunifuSnackbar1.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.InformationOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.InformationOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.InformationOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.InformationOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.InformationOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.InformationOptions.Icon = CType(resources.GetObject("resource.Icon1"), System.Drawing.Image)
+        Me.BunifuSnackbar1.InformationOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.Margin = 10
+        Me.BunifuSnackbar1.MaximumSize = New System.Drawing.Size(0, 0)
+        Me.BunifuSnackbar1.MaximumViews = 7
+        Me.BunifuSnackbar1.MessageRightMargin = 15
+        Me.BunifuSnackbar1.MinimumSize = New System.Drawing.Size(0, 0)
+        Me.BunifuSnackbar1.ShowBorders = False
+        Me.BunifuSnackbar1.ShowCloseIcon = False
+        Me.BunifuSnackbar1.ShowIcon = True
+        Me.BunifuSnackbar1.ShowShadows = True
+        Me.BunifuSnackbar1.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.SuccessOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.SuccessOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.SuccessOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.SuccessOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.SuccessOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.SuccessOptions.Icon = CType(resources.GetObject("resource.Icon2"), System.Drawing.Image)
+        Me.BunifuSnackbar1.SuccessOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.ViewsMargin = 7
+        Me.BunifuSnackbar1.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.WarningOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.WarningOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.WarningOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.WarningOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.WarningOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.WarningOptions.Icon = CType(resources.GetObject("resource.Icon3"), System.Drawing.Image)
+        Me.BunifuSnackbar1.WarningOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.ZoomCloseIcon = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(426, 32)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.ShowCheckBox = True
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 36
+        Me.DateTimePicker1.Value = New Date(2022, 2, 7, 0, 0, 0, 0)
+        '
+        'BunifuDatePicker1
+        '
+        Me.BunifuDatePicker1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuDatePicker1.BorderColor = System.Drawing.Color.Silver
+        Me.BunifuDatePicker1.BorderRadius = 1
+        Me.BunifuDatePicker1.Color = System.Drawing.Color.Silver
+        Me.BunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin
+        Me.BunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left
+        Me.BunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuDatePicker1.DisplayWeekNumbers = False
+        Me.BunifuDatePicker1.DPHeight = 0
+        Me.BunifuDatePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.BunifuDatePicker1.FillDatePicker = False
+        Me.BunifuDatePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BunifuDatePicker1.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDatePicker1.Icon = CType(resources.GetObject("BunifuDatePicker1.Icon"), System.Drawing.Image)
+        Me.BunifuDatePicker1.IconColor = System.Drawing.Color.Gray
+        Me.BunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right
+        Me.BunifuDatePicker1.LeftTextMargin = 5
+        Me.BunifuDatePicker1.Location = New System.Drawing.Point(896, 155)
+        Me.BunifuDatePicker1.MinimumSize = New System.Drawing.Size(4, 32)
+        Me.BunifuDatePicker1.Name = "BunifuDatePicker1"
+        Me.BunifuDatePicker1.Size = New System.Drawing.Size(220, 32)
+        Me.BunifuDatePicker1.TabIndex = 37
+        Me.BunifuDatePicker1.Value = New Date(2022, 2, 7, 15, 7, 18, 0)
+        '
         'Rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.BunifuDatePicker1)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.lblinvoice)
         Me.Controls.Add(Me.cbCustname)
         Me.Controls.Add(Me.Label15)
@@ -604,4 +715,7 @@ Partial Class Rental
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents cbCustname As ComboBox
     Friend WithEvents lblinvoice As Label
+    Friend WithEvents BunifuSnackbar1 As Bunifu.UI.WinForms.BunifuSnackbar
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents BunifuDatePicker1 As Bunifu.UI.WinForms.BunifuDatePicker
 End Class

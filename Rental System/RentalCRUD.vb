@@ -37,6 +37,7 @@ Module RentalCRUD
         Finally
             RentCon.Close()
         End Try
+
     End Sub
 
     Public Sub Reload(ByVal sql As String, dgv As DataGridView)

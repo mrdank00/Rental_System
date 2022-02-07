@@ -22,6 +22,7 @@ Partial Class RecieveRentals
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecieveRentals))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -64,9 +65,14 @@ Partial Class RecieveRentals
         Me.txtMissing = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentalConfig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblinvoice
@@ -93,7 +99,7 @@ Partial Class RecieveRentals
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(889, 236)
+        Me.Label14.Location = New System.Drawing.Point(6, 88)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(147, 17)
         Me.Label14.TabIndex = 62
@@ -102,10 +108,10 @@ Partial Class RecieveRentals
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Font = New System.Drawing.Font("Segoe UI", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(999, 269)
+        Me.lblTotal.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotal.Location = New System.Drawing.Point(97, 116)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(43, 50)
+        Me.lblTotal.Size = New System.Drawing.Size(40, 47)
         Me.lblTotal.TabIndex = 61
         Me.lblTotal.Text = "0"
         '
@@ -113,7 +119,7 @@ Partial Class RecieveRentals
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(885, 429)
+        Me.Label12.Location = New System.Drawing.Point(-1, 282)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(65, 17)
         Me.Label12.TabIndex = 60
@@ -133,7 +139,7 @@ Partial Class RecieveRentals
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(889, 395)
+        Me.Label11.Location = New System.Drawing.Point(3, 249)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(59, 17)
         Me.Label11.TabIndex = 58
@@ -153,7 +159,7 @@ Partial Class RecieveRentals
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(892, 359)
+        Me.Label10.Location = New System.Drawing.Point(4, 211)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(48, 17)
         Me.Label10.TabIndex = 56
@@ -173,7 +179,7 @@ Partial Class RecieveRentals
         '
         Me.lblItemName.AutoSize = True
         Me.lblItemName.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblItemName.Location = New System.Drawing.Point(370, 126)
+        Me.lblItemName.Location = New System.Drawing.Point(6, 72)
         Me.lblItemName.Name = "lblItemName"
         Me.lblItemName.Size = New System.Drawing.Size(185, 45)
         Me.lblItemName.TabIndex = 54
@@ -208,12 +214,12 @@ Partial Class RecieveRentals
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(14, 68)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 51)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 13)
+        Me.Label5.Size = New System.Drawing.Size(111, 17)
         Me.Label5.TabIndex = 48
-        Me.Label5.Text = "Actual Stock:"
+        Me.Label5.Text = "Customer Name:"
         '
         'gvRentals
         '
@@ -397,7 +403,7 @@ Partial Class RecieveRentals
         Me.gvRentalConfig.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.gvRentalConfig.HeaderBgColor = System.Drawing.Color.Empty
         Me.gvRentalConfig.HeaderForeColor = System.Drawing.Color.White
-        Me.gvRentalConfig.Location = New System.Drawing.Point(21, 126)
+        Me.gvRentalConfig.Location = New System.Drawing.Point(12, 126)
         Me.gvRentalConfig.Name = "gvRentalConfig"
         Me.gvRentalConfig.RowHeadersVisible = False
         Me.gvRentalConfig.RowTemplate.Height = 40
@@ -409,7 +415,7 @@ Partial Class RecieveRentals
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(840, 86)
+        Me.PictureBox1.Location = New System.Drawing.Point(474, 38)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(46, 44)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -420,7 +426,7 @@ Partial Class RecieveRentals
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(761, 69)
+        Me.Label3.Location = New System.Drawing.Point(373, 18)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 17)
         Me.Label3.TabIndex = 44
@@ -430,7 +436,7 @@ Partial Class RecieveRentals
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(471, 69)
+        Me.Label2.Location = New System.Drawing.Point(89, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(86, 17)
         Me.Label2.TabIndex = 42
@@ -448,7 +454,7 @@ Partial Class RecieveRentals
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(377, 67)
+        Me.Label1.Location = New System.Drawing.Point(11, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 40
@@ -490,7 +496,7 @@ Partial Class RecieveRentals
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(562, 69)
+        Me.Label4.Location = New System.Drawing.Point(185, 16)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 17)
         Me.Label4.TabIndex = 68
@@ -500,47 +506,142 @@ Partial Class RecieveRentals
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(662, 69)
+        Me.Label6.Location = New System.Drawing.Point(278, 18)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(38, 17)
         Me.Label6.TabIndex = 70
         Me.Label6.Text = "Price"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.lblItemName)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(364, 51)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(522, 117)
+        Me.GroupBox1.TabIndex = 71
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "GroupBox1"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.lblTotal)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Location = New System.Drawing.Point(888, 147)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(245, 329)
+        Me.GroupBox2.TabIndex = 72
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "GroupBox2"
+        '
+        'BunifuSnackbar1
+        '
+        Me.BunifuSnackbar1.AllowDragging = False
+        Me.BunifuSnackbar1.AllowMultipleViews = True
+        Me.BunifuSnackbar1.ClickToClose = True
+        Me.BunifuSnackbar1.DoubleClickToClose = True
+        Me.BunifuSnackbar1.DurationAfterIdle = 3000
+        Me.BunifuSnackbar1.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.ErrorOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.ErrorOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.ErrorOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.ErrorOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.ErrorOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.ErrorOptions.Icon = CType(resources.GetObject("resource.Icon"), System.Drawing.Image)
+        Me.BunifuSnackbar1.ErrorOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.FadeCloseIcon = False
+        Me.BunifuSnackbar1.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner
+        Me.BunifuSnackbar1.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.InformationOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.InformationOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.InformationOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.InformationOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.InformationOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.InformationOptions.Icon = CType(resources.GetObject("resource.Icon1"), System.Drawing.Image)
+        Me.BunifuSnackbar1.InformationOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.Margin = 10
+        Me.BunifuSnackbar1.MaximumSize = New System.Drawing.Size(0, 0)
+        Me.BunifuSnackbar1.MaximumViews = 7
+        Me.BunifuSnackbar1.MessageRightMargin = 15
+        Me.BunifuSnackbar1.MinimumSize = New System.Drawing.Size(0, 0)
+        Me.BunifuSnackbar1.ShowBorders = False
+        Me.BunifuSnackbar1.ShowCloseIcon = False
+        Me.BunifuSnackbar1.ShowIcon = True
+        Me.BunifuSnackbar1.ShowShadows = True
+        Me.BunifuSnackbar1.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.SuccessOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.SuccessOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.SuccessOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.SuccessOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.SuccessOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.SuccessOptions.Icon = CType(resources.GetObject("resource.Icon2"), System.Drawing.Image)
+        Me.BunifuSnackbar1.SuccessOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.ViewsMargin = 7
+        Me.BunifuSnackbar1.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.WarningOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.WarningOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.WarningOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.WarningOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.WarningOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.WarningOptions.Icon = CType(resources.GetObject("resource.Icon3"), System.Drawing.Image)
+        Me.BunifuSnackbar1.WarningOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.ZoomCloseIcon = True
+        '
         'RecieveRentals
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtMissing)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtRetuned)
         Me.Controls.Add(Me.lblinvoice)
         Me.Controls.Add(Me.cbCustname)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.lblTotal)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.txtLocation)
-        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtContact)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.lblItemName)
         Me.Controls.Add(Me.BunifuThinButton22)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.gvRentals)
         Me.Controls.Add(Me.gvRentalConfig)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtPrice)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtQty)
         Me.Controls.Add(Me.txtAmt)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Name = "RecieveRentals"
         Me.Size = New System.Drawing.Size(1136, 588)
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gvRentalConfig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -581,4 +682,7 @@ Partial Class RecieveRentals
     Friend WithEvents Category As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents BunifuSnackbar1 As Bunifu.UI.WinForms.BunifuSnackbar
 End Class

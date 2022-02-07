@@ -22,11 +22,12 @@ Partial Class Product
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Product))
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblId = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtqty = New System.Windows.Forms.TextBox()
@@ -44,19 +45,20 @@ Partial Class Product
         Me.cbcolour = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbSize = New System.Windows.Forms.ComboBox()
+        Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label4
+        'lblId
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(457, 75)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 17)
-        Me.Label4.TabIndex = 32
-        Me.Label4.Text = "Balance"
+        Me.lblId.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblId.AutoSize = True
+        Me.lblId.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblId.Location = New System.Drawing.Point(629, 75)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(13, 17)
+        Me.lblId.TabIndex = 32
+        Me.lblId.Text = "-"
         '
         'TextBox4
         '
@@ -328,6 +330,75 @@ Partial Class Product
         Me.cbSize.Size = New System.Drawing.Size(121, 28)
         Me.cbSize.TabIndex = 37
         '
+        'BunifuSnackbar1
+        '
+        Me.BunifuSnackbar1.AllowDragging = False
+        Me.BunifuSnackbar1.AllowMultipleViews = True
+        Me.BunifuSnackbar1.ClickToClose = True
+        Me.BunifuSnackbar1.DoubleClickToClose = True
+        Me.BunifuSnackbar1.DurationAfterIdle = 3000
+        Me.BunifuSnackbar1.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.ErrorOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.ErrorOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.ErrorOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.ErrorOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.BunifuSnackbar1.ErrorOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.ErrorOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.ErrorOptions.Icon = CType(resources.GetObject("resource.Icon"), System.Drawing.Image)
+        Me.BunifuSnackbar1.ErrorOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.FadeCloseIcon = False
+        Me.BunifuSnackbar1.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner
+        Me.BunifuSnackbar1.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.InformationOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.InformationOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.InformationOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.InformationOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(145, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.InformationOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.InformationOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.InformationOptions.Icon = CType(resources.GetObject("resource.Icon1"), System.Drawing.Image)
+        Me.BunifuSnackbar1.InformationOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.Margin = 10
+        Me.BunifuSnackbar1.MaximumSize = New System.Drawing.Size(0, 0)
+        Me.BunifuSnackbar1.MaximumViews = 7
+        Me.BunifuSnackbar1.MessageRightMargin = 15
+        Me.BunifuSnackbar1.MinimumSize = New System.Drawing.Size(0, 0)
+        Me.BunifuSnackbar1.ShowBorders = False
+        Me.BunifuSnackbar1.ShowCloseIcon = False
+        Me.BunifuSnackbar1.ShowIcon = True
+        Me.BunifuSnackbar1.ShowShadows = True
+        Me.BunifuSnackbar1.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.SuccessOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.SuccessOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.SuccessOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.SuccessOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.BunifuSnackbar1.SuccessOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.SuccessOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.SuccessOptions.Icon = CType(resources.GetObject("resource.Icon2"), System.Drawing.Image)
+        Me.BunifuSnackbar1.SuccessOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.ViewsMargin = 7
+        Me.BunifuSnackbar1.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.ActionBorderRadius = 1
+        Me.BunifuSnackbar1.WarningOptions.ActionFont = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.BunifuSnackbar1.WarningOptions.ActionForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.WarningOptions.BackColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.WarningOptions.BorderColor = System.Drawing.Color.White
+        Me.BunifuSnackbar1.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(143, Byte), Integer))
+        Me.BunifuSnackbar1.WarningOptions.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.BunifuSnackbar1.WarningOptions.ForeColor = System.Drawing.Color.Black
+        Me.BunifuSnackbar1.WarningOptions.Icon = CType(resources.GetObject("resource.Icon3"), System.Drawing.Image)
+        Me.BunifuSnackbar1.WarningOptions.IconLeftMargin = 12
+        Me.BunifuSnackbar1.ZoomCloseIcon = True
+        '
         'Product
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -338,7 +409,7 @@ Partial Class Product
         Me.Controls.Add(Me.cbcolour)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.cbCat)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtqty)
@@ -358,7 +429,7 @@ Partial Class Product
 
     End Sub
 
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblId As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtqty As TextBox
@@ -376,4 +447,5 @@ Partial Class Product
     Friend WithEvents cbcolour As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents cbSize As ComboBox
+    Friend WithEvents BunifuSnackbar1 As Bunifu.UI.WinForms.BunifuSnackbar
 End Class

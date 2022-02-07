@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Globalization
 Public Class Rental
     Private Sub Rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display()
@@ -27,7 +28,7 @@ Public Class Rental
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        gvRentals.Rows.Add(lblItemName.Text, txtQty.Text, txtPrice.Text, txtAmt.Text, txtCat.Text, txtColour.Text, txtSize.Text)
+        gvRentals.Rows.Add(lblItemName.Text, txtPrice.Text, txtQty.Text, txtAmt.Text, txtCat.Text, txtColour.Text, txtSize.Text)
     End Sub
 
     Private Sub txtPrice_TextChanged(sender As Object, e As EventArgs) Handles txtPrice.TextChanged
@@ -51,16 +52,32 @@ Public Class Rental
     End Sub
 
     Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
-        Insert("insert into Rentalconfig(Customername,location,contact,total) values('" + cbCustname.Text + "','" + txtLocation.Text + "','" + txtContact.Text + "','" + lblTotal.Text + "')")
+        Insert("insert into Rentalconfig(Customername,location,contact,total,status) values('" + cbCustname.Text + "','" + txtLocation.Text + "','" + txtContact.Text + "','" + lblTotal.Text + "','" + "Booked" + "')")
 
-        invoiceno()
+        Invoiceno()
 
         For Each row As DataGridViewRow In gvRentals.Rows
-            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
+            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,RentedStamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + DateTime.Now + "')")
         Next
+
+        For k = 0 To gvRentals.RowCount - 1
+            If RentCon.State = ConnectionState.Closed Then
+                RentCon.Open()
+            End If
+            Dim sqll = "Select * from StockMast where itemname='" + gvRentals.Rows(k).Cells(0).Value + "'"
+            cmd = New SqlCommand(sqll, RentCon)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                Dim query = "update StockMast set qty = '" & dr.Item("Qty") - gvRentals.Rows(k).Cells(2).Value & "' where itemname= '" & gvRentals.Rows(k).Cells(0).Value & "'"
+                cmd = New SqlCommand(query, RentCon)
+                cmd.ExecuteNonQuery()
+            End While
+        Next
+        display()
         Clear()
+        BunifuSnackbar1.Show(Me.FindForm, "sucess")
     End Sub
-    Sub invoiceno()
+    Sub Invoiceno()
         If RentCon.State = ConnectionState.Closed Then
             RentCon.Open()
         End If
@@ -85,5 +102,53 @@ Public Class Rental
                 control.Text = ""
             End If
         Next
+    End Sub
+
+    Private Sub cbCustname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCustname.SelectedIndexChanged
+        If RentCon.State = ConnectionState.Closed Then
+            RentCon.Open()
+        End If
+        cmd = New SqlCommand("select * from Customers where name='" + cbCustname.Text + "'", RentCon)
+        da = New SqlDataAdapter(cmd)
+        tbl = New DataTable
+        da.Fill(tbl)
+        If tbl.Rows.Count = 0 Then
+            lblinvoice.Text = 1
+        Else
+
+            txtContact.Text = tbl.Rows(0)(2).ToString
+            txtLocation.Text = tbl.Rows(0)(3).ToString
+        End If
+        RentCon.Close()
+    End Sub
+
+    Private Sub lblItemName_Click(sender As Object, e As EventArgs) Handles lblItemName.Click
+        Dim outto As DateTime
+        DateTime.TryParseExact(DateTimePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
+        MsgBox(DateTimePicker1.Text)
+        If RentCon.State = ConnectionState.Closed Then
+            RentCon.Open()
+        End If
+        cmd = New SqlCommand("select * from RentalTranx where RentedStamp='" + outto + "'", RentCon)
+        da = New SqlDataAdapter(cmd)
+        tbl = New DataTable
+        da.Fill(tbl)
+        BunifuDataGridView1.DataSource = tbl
+        If tbl.Rows.Count = 0 Then
+            MsgBox("Yawa")
+        Else
+
+
+        End If
+        RentCon.Close()
+
+        lblItemName.Text = DateTime.Now
+
+        Dim myDateTime As Date = Date.Parse(lblItemName.Text)
+        Dim MyDate As Date = myDateTime.Date()
+
+        MsgBox(MyDate)
+        DateTime.Parse(lblItemName.Text)
+        MsgBox(DateTime.Parse(DateTime.Now))
     End Sub
 End Class
