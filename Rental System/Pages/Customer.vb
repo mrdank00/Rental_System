@@ -3,7 +3,7 @@
         Insert("insert into Customers(name,contact,location,CustomerId,CustomerBalance) values('" + txtCustName.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + txtCustomerID.Text + "','" + txtBal.Text + "')")
         Clear()
         Display()
-        BunifuSnackbar1.Show(Me.FindForm, "sucess")
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
     End Sub
 
     Public Sub Clear()
@@ -25,10 +25,41 @@
     End Sub
 
     Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles BunifuThinButton21.Click
-        BunifuSnackbar1.Show(Me.FindForm, "sucess")
+        If lblId.Text = "-" Then
+            MsgBox("Kindly select Customer to Edit")
+            Exit Sub
+        End If
+        Insert("update customers set name='" + txtCustName.Text + "',contact='" + txtContact.Text + "',location='" + txtLocation.Text + "',Customerid='" + txtCustomerID.Text + "',Customerbalance='" + txtBal.Text + "' where id='" + lblId.Text + "'")
+        Display()
+        Clear()
+        lblId.Text = "-"
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
     End Sub
 
     Private Sub BunifuThinButton23_Click(sender As Object, e As EventArgs) Handles BunifuThinButton23.Click
-        BunifuSnackbar1.Show(Me.FindForm, "sucess")
+        If lblId.Text = "-" Then
+            MsgBox("Kindly select Customer to Edit")
+            Exit Sub
+        End If
+        Insert("delete from customers where id='" + lblId.Text + "'")
+        Display()
+        Clear()
+        lblId.Text = "-"
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
+
+    End Sub
+
+    Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
+        Try
+            Dim row As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
+            txtCustName.Text = row.Cells(1).Value.ToString()
+            txtContact.Text = row.Cells(2).Value.ToString()
+            txtLocation.Text = row.Cells(3).Value.ToString()
+            txtCustomerID.Text = row.Cells(4).Value.ToString()
+            txtBal.Text = row.Cells(5).Value.ToString()
+            lblId.Text = row.Cells(0).Value.ToString()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

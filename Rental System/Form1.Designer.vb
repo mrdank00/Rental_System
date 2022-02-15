@@ -22,13 +22,13 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim BorderEdges6 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
-        Dim BorderEdges7 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
-        Dim BorderEdges8 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
-        Dim BorderEdges9 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
-        Dim BorderEdges10 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
-        Dim Animation2 As Utilities.BunifuPages.BunifuAnimatorNS.Animation = New Utilities.BunifuPages.BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim BorderEdges1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
+        Dim BorderEdges2 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
+        Dim BorderEdges3 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
+        Dim BorderEdges4 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
+        Dim BorderEdges5 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
+        Dim Animation1 As Utilities.BunifuPages.BunifuAnimatorNS.Animation = New Utilities.BunifuPages.BunifuAnimatorNS.Animation()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BunifuButton25 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2()
@@ -76,7 +76,7 @@ Partial Class Form1
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.BunifuPages1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(964, 393)
+        Me.SplitContainer1.Size = New System.Drawing.Size(964, 426)
         Me.SplitContainer1.SplitterDistance = 160
         Me.SplitContainer1.TabIndex = 1
         '
@@ -90,7 +90,7 @@ Partial Class Form1
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(160, 393)
+        Me.Panel1.Size = New System.Drawing.Size(160, 426)
         Me.Panel1.TabIndex = 0
         '
         'BunifuButton25
@@ -114,11 +114,11 @@ Partial Class Form1
         Me.BunifuButton25.ColorContrastOnClick = 45
         Me.BunifuButton25.ColorContrastOnHover = 45
         Me.BunifuButton25.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges6.BottomLeft = True
-        BorderEdges6.BottomRight = True
-        BorderEdges6.TopLeft = True
-        BorderEdges6.TopRight = True
-        Me.BunifuButton25.CustomizableEdges = BorderEdges6
+        BorderEdges1.BottomLeft = True
+        BorderEdges1.BottomRight = True
+        BorderEdges1.TopLeft = True
+        BorderEdges1.TopRight = True
+        Me.BunifuButton25.CustomizableEdges = BorderEdges1
         Me.BunifuButton25.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton25.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton25.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -205,11 +205,11 @@ Partial Class Form1
         Me.BunifuButton24.ColorContrastOnClick = 45
         Me.BunifuButton24.ColorContrastOnHover = 45
         Me.BunifuButton24.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges7.BottomLeft = True
-        BorderEdges7.BottomRight = True
-        BorderEdges7.TopLeft = True
-        BorderEdges7.TopRight = True
-        Me.BunifuButton24.CustomizableEdges = BorderEdges7
+        BorderEdges2.BottomLeft = True
+        BorderEdges2.BottomRight = True
+        BorderEdges2.TopLeft = True
+        BorderEdges2.TopRight = True
+        Me.BunifuButton24.CustomizableEdges = BorderEdges2
         Me.BunifuButton24.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton24.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton24.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -296,11 +296,11 @@ Partial Class Form1
         Me.BunifuButton23.ColorContrastOnClick = 45
         Me.BunifuButton23.ColorContrastOnHover = 45
         Me.BunifuButton23.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges8.BottomLeft = True
-        BorderEdges8.BottomRight = True
-        BorderEdges8.TopLeft = True
-        BorderEdges8.TopRight = True
-        Me.BunifuButton23.CustomizableEdges = BorderEdges8
+        BorderEdges3.BottomLeft = True
+        BorderEdges3.BottomRight = True
+        BorderEdges3.TopLeft = True
+        BorderEdges3.TopRight = True
+        Me.BunifuButton23.CustomizableEdges = BorderEdges3
         Me.BunifuButton23.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton23.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton23.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -387,11 +387,11 @@ Partial Class Form1
         Me.BunifuButton22.ColorContrastOnClick = 45
         Me.BunifuButton22.ColorContrastOnHover = 45
         Me.BunifuButton22.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges9.BottomLeft = True
-        BorderEdges9.BottomRight = True
-        BorderEdges9.TopLeft = True
-        BorderEdges9.TopRight = True
-        Me.BunifuButton22.CustomizableEdges = BorderEdges9
+        BorderEdges4.BottomLeft = True
+        BorderEdges4.BottomRight = True
+        BorderEdges4.TopLeft = True
+        BorderEdges4.TopRight = True
+        Me.BunifuButton22.CustomizableEdges = BorderEdges4
         Me.BunifuButton22.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton22.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton22.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -478,11 +478,11 @@ Partial Class Form1
         Me.BunifuButton21.ColorContrastOnClick = 45
         Me.BunifuButton21.ColorContrastOnHover = 45
         Me.BunifuButton21.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges10.BottomLeft = True
-        BorderEdges10.BottomRight = True
-        BorderEdges10.TopLeft = True
-        BorderEdges10.TopRight = True
-        Me.BunifuButton21.CustomizableEdges = BorderEdges10
+        BorderEdges5.BottomLeft = True
+        BorderEdges5.BottomRight = True
+        BorderEdges5.TopLeft = True
+        BorderEdges5.TopRight = True
+        Me.BunifuButton21.CustomizableEdges = BorderEdges5
         Me.BunifuButton21.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton21.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton21.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -566,24 +566,24 @@ Partial Class Form1
         Me.BunifuPages1.PageName = "TabPage1"
         Me.BunifuPages1.PageTitle = "Products"
         Me.BunifuPages1.SelectedIndex = 0
-        Me.BunifuPages1.Size = New System.Drawing.Size(800, 393)
+        Me.BunifuPages1.Size = New System.Drawing.Size(800, 426)
         Me.BunifuPages1.TabIndex = 0
-        Animation2.AnimateOnlyDifferences = False
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 0!
-        Me.BunifuPages1.Transition = Animation2
+        Animation1.AnimateOnlyDifferences = False
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0)
+        Animation1.RotateCoeff = 0!
+        Animation1.RotateLimit = 0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0!
+        Animation1.TransparencyCoeff = 0!
+        Me.BunifuPages1.Transition = Animation1
         Me.BunifuPages1.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom
         '
         'TabPage1
@@ -592,7 +592,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 4)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(792, 367)
+        Me.TabPage1.Size = New System.Drawing.Size(792, 400)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Products"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -602,7 +602,7 @@ Partial Class Form1
         Me.Product1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Product1.Location = New System.Drawing.Point(3, 3)
         Me.Product1.Name = "Product1"
-        Me.Product1.Size = New System.Drawing.Size(786, 361)
+        Me.Product1.Size = New System.Drawing.Size(786, 394)
         Me.Product1.TabIndex = 0
         '
         'TabPage2
@@ -611,7 +611,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(792, 418)
+        Me.TabPage2.Size = New System.Drawing.Size(792, 367)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Customers"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -621,7 +621,7 @@ Partial Class Form1
         Me.Customer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Customer1.Location = New System.Drawing.Point(3, 3)
         Me.Customer1.Name = "Customer1"
-        Me.Customer1.Size = New System.Drawing.Size(786, 412)
+        Me.Customer1.Size = New System.Drawing.Size(786, 361)
         Me.Customer1.TabIndex = 0
         '
         'TabPage3
@@ -630,7 +630,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 4)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(792, 418)
+        Me.TabPage3.Size = New System.Drawing.Size(792, 367)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Rent"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -648,7 +648,7 @@ Partial Class Form1
         Me.TabPage4.Location = New System.Drawing.Point(4, 4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(792, 418)
+        Me.TabPage4.Size = New System.Drawing.Size(792, 367)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Report"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -659,7 +659,7 @@ Partial Class Form1
         Me.TabPage5.Location = New System.Drawing.Point(4, 4)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(792, 418)
+        Me.TabPage5.Size = New System.Drawing.Size(792, 367)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "RentalReturns"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -669,7 +669,7 @@ Partial Class Form1
         Me.RecieveRentals1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RecieveRentals1.Location = New System.Drawing.Point(3, 3)
         Me.RecieveRentals1.Name = "RecieveRentals1"
-        Me.RecieveRentals1.Size = New System.Drawing.Size(786, 412)
+        Me.RecieveRentals1.Size = New System.Drawing.Size(786, 361)
         Me.RecieveRentals1.TabIndex = 0
         '
         'Panel2
@@ -698,7 +698,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 444)
+        Me.ClientSize = New System.Drawing.Size(964, 477)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "Form1"

@@ -44,6 +44,7 @@ Partial Class Customer
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtLocation = New System.Windows.Forms.TextBox()
         Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
+        Me.lblId = New System.Windows.Forms.Label()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -373,10 +374,22 @@ Partial Class Customer
         Me.BunifuSnackbar1.WarningOptions.IconLeftMargin = 12
         Me.BunifuSnackbar1.ZoomCloseIcon = True
         '
+        'lblId
+        '
+        Me.lblId.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblId.AutoSize = True
+        Me.lblId.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblId.Location = New System.Drawing.Point(656, 72)
+        Me.lblId.Name = "lblId"
+        Me.lblId.Size = New System.Drawing.Size(13, 17)
+        Me.lblId.TabIndex = 17
+        Me.lblId.Text = "-"
+        '
         'Customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.lblId)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtBal)
         Me.Controls.Add(Me.Label5)
@@ -418,4 +431,5 @@ Partial Class Customer
     Friend WithEvents Label6 As Label
     Friend WithEvents txtLocation As TextBox
     Friend WithEvents BunifuSnackbar1 As Bunifu.UI.WinForms.BunifuSnackbar
+    Friend WithEvents lblId As Label
 End Class

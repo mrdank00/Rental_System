@@ -1,11 +1,12 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Globalization
 Public Class Rental
+    Dim dt As New dsRental
     Private Sub Rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        display()
-        invoiceno()
+        Display()
+        Invoiceno()
     End Sub
-    Sub display()
+    Sub Display()
         Reload("Select * from Stockmast", BunifuDataGridView1)
         ComboFeed("Select name from customers", cbCustname, 0)
     End Sub
@@ -57,7 +58,7 @@ Public Class Rental
         Invoiceno()
 
         For Each row As DataGridViewRow In gvRentals.Rows
-            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,RentedStamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + DateTime.Now + "')")
+            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
         Next
 
         For k = 0 To gvRentals.RowCount - 1
@@ -73,9 +74,30 @@ Public Class Rental
                 cmd.ExecuteNonQuery()
             End While
         Next
-        display()
+        Rentalinvoice()
+        Display()
         Clear()
-        BunifuSnackbar1.Show(Me.FindForm, "sucess")
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
+    End Sub
+
+    Sub Rentalinvoice()
+        Dim query = "select * from RentalTranx where invoiceno='" + lblinvoice.Text + "'"
+        cmd = New SqlCommand(query, RentCon)
+        dt.Tables("RentalTranx").Rows.Clear()
+        da.SelectCommand = cmd
+        da.Fill(dt, "RentalTranx")
+
+        'Dim sql = "select * from ClientReg"
+        'dt.Tables("ClientReg").Rows.Clear()
+        'cmd = New SqlCommand(sql, FleetCon)
+        'da.SelectCommand = cmd
+        'da.Fill(dt, "ClientReg")
+
+        Dim report As New rptRentedInvoice
+        report.SetDataSource(dt)
+        Reports.CrystalReportViewer2.ReportSource = report
+        Reports.Show()
+        Reports.CrystalReportViewer2.Refresh()
     End Sub
     Sub Invoiceno()
         If RentCon.State = ConnectionState.Closed Then
@@ -124,8 +146,8 @@ Public Class Rental
 
     Private Sub lblItemName_Click(sender As Object, e As EventArgs) Handles lblItemName.Click
         Dim outto As DateTime
-        DateTime.TryParseExact(DateTimePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
-        MsgBox(DateTimePicker1.Text)
+        DateTime.TryParseExact(BunifuDatePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
+        MsgBox(BunifuDatePicker1.Text)
         If RentCon.State = ConnectionState.Closed Then
             RentCon.Open()
         End If
@@ -150,5 +172,9 @@ Public Class Rental
         MsgBox(MyDate)
         DateTime.Parse(lblItemName.Text)
         MsgBox(DateTime.Parse(DateTime.Now))
+    End Sub
+
+    Private Sub Rental_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
+        Display()
     End Sub
 End Class

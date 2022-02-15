@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class RecieveRentals
+    Dim dt As New dsRental
 
     Sub Display()
         Reload("select * from rentalconfig where status ='" + "Booked" + "'", gvRentalConfig)
@@ -19,14 +20,20 @@ Public Class RecieveRentals
             da = New SqlDataAdapter(cmd)
             tbl = New DataTable
             da.Fill(tbl)
+            If tbl.Rows.Count = 0 Then
+                MsgBox("This is invalid")
+                Insert("delete from rentalconfig where invoiceno='" + lblinvoice.Text + "'")
+                Display()
+                Exit Sub
+            End If
             cbCustname.Text = tbl.Rows(0)(1).ToString
             txtContact.Text = tbl.Rows(0)(2).ToString
             txtLocation.Text = tbl.Rows(0)(3).ToString
             For k = 0 To tbl.Rows.Count - 1
-                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(6).ToString, "", "", 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
+                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(6).ToString, tbl.Rows(k)(13).ToString, tbl.Rows(k)(14).ToString, 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
             Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString)
         End Try
 
 
@@ -79,10 +86,9 @@ Public Class RecieveRentals
             sum += gvRentals.Rows(k).Cells(5).Value
         Next
         lblTotal.Text = sum
-        Clear()
     End Sub
 
-    Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
+    Public Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
         If RentCon.State = ConnectionState.Closed Then
             RentCon.Open()
         End If
@@ -111,9 +117,30 @@ Public Class RecieveRentals
             End While
         Next
         Insert("update RentalConfig set status='" + "Returned" + "' where invoiceno='" + lblinvoice.Text + "'")
+        Rentalreturninvoice()
+        Display()
         gvRentals.Rows.Clear()
         Clear()
         BunifuSnackbar1.Show(Me.FindForm, "sucess")
+    End Sub
+    Sub Rentalreturninvoice()
+        Dim query = "select * from RentalTranx where invoiceno='" + lblinvoice.Text + "'"
+        cmd = New SqlCommand(query, RentCon)
+        dt.Tables("RentalTranx").Rows.Clear()
+        da.SelectCommand = cmd
+        da.Fill(dt, "RentalTranx")
+
+        'Dim sql = "select * from ClientReg"
+        'dt.Tables("ClientReg").Rows.Clear()
+        'cmd = New SqlCommand(sql, FleetCon)
+        'da.SelectCommand = cmd
+        'da.Fill(dt, "ClientReg")
+
+        Dim report As New rptRentalRecieveInvoice
+        report.SetDataSource(dt)
+        Reports.CrystalReportViewer2.ReportSource = report
+        Reports.Show()
+        Reports.CrystalReportViewer2.Refresh()
     End Sub
 
     Private Sub gvRentals_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles gvRentals.RowsAdded
@@ -121,14 +148,20 @@ Public Class RecieveRentals
     End Sub
     Public Sub Clear()
         For Each control As Control In Me.Controls
-            If TypeOf control Is TextBox Then
+            If TypeOf control Is TextBox Or TypeOf control Is ComboBox Then
                 control.Text = ""
             End If
-            If TypeOf control Is ComboBox Then
-                control.Text = ""
-            End If
+            'If TypeOf control Is ComboBox Then
+            '    control.Text = ""
+            'End If
         Next
     End Sub
 
+    Private Sub cbCustname_MouseClick(sender As Object, e As MouseEventArgs) Handles cbCustname.MouseClick
+        Display()
+    End Sub
 
+    Private Sub RecieveRentals_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
+        Display()
+    End Sub
 End Class

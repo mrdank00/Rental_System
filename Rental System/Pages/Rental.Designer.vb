@@ -64,11 +64,9 @@ Partial Class Rental
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.cbCustname = New System.Windows.Forms.ComboBox()
         Me.lblinvoice = New System.Windows.Forms.Label()
         Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,7 +146,7 @@ Partial Class Rental
         Me.gvRentals.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gvRentals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.gvRentals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.gvRentals.BackgroundColor = System.Drawing.Color.White
         Me.gvRentals.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gvRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -208,42 +206,49 @@ Partial Class Rental
         Me.Column1.HeaderText = "ItemName"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Width = 110
         '
         'Column2
         '
         Me.Column2.HeaderText = "Price"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
+        Me.Column2.Width = 69
         '
         'Column3
         '
         Me.Column3.HeaderText = "Qty"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
+        Me.Column3.Width = 59
         '
         'Column6
         '
         Me.Column6.HeaderText = "Amount"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
+        Me.Column6.Width = 92
         '
         'Category
         '
         Me.Category.HeaderText = "Category"
         Me.Category.Name = "Category"
         Me.Category.ReadOnly = True
+        Me.Category.Width = 101
         '
         'Column4
         '
         Me.Column4.HeaderText = "Colour"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
+        Me.Column4.Width = 82
         '
         'Column5
         '
         Me.Column5.HeaderText = "Size"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
+        Me.Column5.Width = 62
         '
         'Label1
         '
@@ -433,7 +438,7 @@ Partial Class Rental
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(883, 390)
+        Me.Label11.Location = New System.Drawing.Point(883, 388)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(59, 17)
         Me.Label11.TabIndex = 27
@@ -453,7 +458,7 @@ Partial Class Rental
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(879, 423)
+        Me.Label12.Location = New System.Drawing.Point(879, 419)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(65, 17)
         Me.Label12.TabIndex = 29
@@ -493,19 +498,11 @@ Partial Class Rental
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(886, 275)
+        Me.Label15.Location = New System.Drawing.Point(981, 292)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(72, 17)
         Me.Label15.TabIndex = 33
         Me.Label15.Text = "Cash Paid:"
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(944, 295)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(152, 27)
-        Me.TextBox9.TabIndex = 32
         '
         'cbCustname
         '
@@ -521,7 +518,7 @@ Partial Class Rental
         '
         Me.lblinvoice.AutoSize = True
         Me.lblinvoice.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblinvoice.Location = New System.Drawing.Point(790, 29)
+        Me.lblinvoice.Location = New System.Drawing.Point(879, 24)
         Me.lblinvoice.Name = "lblinvoice"
         Me.lblinvoice.Size = New System.Drawing.Size(72, 17)
         Me.lblinvoice.TabIndex = 35
@@ -596,16 +593,6 @@ Partial Class Rental
         Me.BunifuSnackbar1.WarningOptions.IconLeftMargin = 12
         Me.BunifuSnackbar1.ZoomCloseIcon = True
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(426, 32)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.ShowCheckBox = True
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 36
-        Me.DateTimePicker1.Value = New Date(2022, 2, 7, 0, 0, 0, 0)
-        '
         'BunifuDatePicker1
         '
         Me.BunifuDatePicker1.BackColor = System.Drawing.Color.Transparent
@@ -621,6 +608,7 @@ Partial Class Rental
         Me.BunifuDatePicker1.FillDatePicker = False
         Me.BunifuDatePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BunifuDatePicker1.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDatePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.BunifuDatePicker1.Icon = CType(resources.GetObject("BunifuDatePicker1.Icon"), System.Drawing.Image)
         Me.BunifuDatePicker1.IconColor = System.Drawing.Color.Gray
         Me.BunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right
@@ -637,11 +625,9 @@ Partial Class Rental
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.BunifuDatePicker1)
-        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.lblinvoice)
         Me.Controls.Add(Me.cbCustname)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.TextBox9)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.Label12)
@@ -705,7 +691,6 @@ Partial Class Rental
     Friend WithEvents lblTotal As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents TextBox9 As TextBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -716,6 +701,5 @@ Partial Class Rental
     Friend WithEvents cbCustname As ComboBox
     Friend WithEvents lblinvoice As Label
     Friend WithEvents BunifuSnackbar1 As Bunifu.UI.WinForms.BunifuSnackbar
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents BunifuDatePicker1 As Bunifu.UI.WinForms.BunifuDatePicker
 End Class

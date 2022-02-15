@@ -10,6 +10,7 @@
     End Sub
 
     Private Sub BunifuButton22_Click(sender As Object, e As EventArgs) Handles BunifuButton22.Click
+
         BunifuPages1.SetPage("Rent")
         lblHeader.Text = "Rent"
     End Sub
@@ -22,5 +23,6 @@
     Private Sub BunifuButton25_Click(sender As Object, e As EventArgs) Handles BunifuButton25.Click
         BunifuPages1.SetPage("RentalReturns")
         lblHeader.Text = "Rental Returns"
+
     End Sub
 End Class

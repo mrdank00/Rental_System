@@ -33,7 +33,7 @@ Module RentalCRUD
             End With
             RentCon.Close()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString)
         Finally
             RentCon.Close()
         End Try
