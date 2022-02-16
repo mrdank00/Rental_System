@@ -324,6 +324,18 @@
     <Compile Include="Pages\Rental.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Pages\RentalReports.Designer.vb">
+      <DependentUpon>RentalReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RentalReports.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\rptRentalsperDate.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRentalsperDate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RentalCON.vb" />
     <Compile Include="RentalCRUD.vb" />
     <Compile Include="Reports\dsRental.Designer.vb">
@@ -336,6 +348,18 @@
     </Compile>
     <Compile Include="Reports\Reports.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptCustomersInfo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCustomersInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptItemPerCategory.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptItemPerCategory.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptRentalRecieveInvoice.vb">
       <AutoGen>True</AutoGen>
@@ -373,8 +397,23 @@
     <EmbeddedResource Include="Pages\Rental.resx">
       <DependentUpon>Rental.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\RentalReports.resx">
+      <DependentUpon>RentalReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\rptRentalsperDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRentalsperDate.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Reports.resx">
       <DependentUpon>Reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptCustomersInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCustomersInfo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptItemPerCategory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptItemPerCategory.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptRentalRecieveInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

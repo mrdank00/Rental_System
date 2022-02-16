@@ -95,7 +95,7 @@ Public Class RecieveRentals
         End If
         For Each row As DataGridViewRow In gvRentals.Rows
             ' Insert("update Rentaltranx set qtyReturned ='" + row.Cells(3).Value.ToString + "',qtymissing='" + row.Cells(4).Value + "',amountmissing='" + row.Cells(5).Value + "' where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'")
-            Dim query = "update Rentaltranx set qtyReturned =@Qtyreturned,qtymissing=@qtymissing,amountmissing=@amountmissing where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'"
+            Dim query = "update Rentaltranx set qtyReturned =@Qtyreturned,qtymissing=@qtymissing,amountmissing=@amountmissing,Recievedstamp=convert(datetime,'" + DateTime.Now + "',105) where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'"
             cmd = New SqlCommand(query, RentCon)
             With cmd
                 .Parameters.AddWithValue("@Qtyreturned", SqlDbType.Float).Value = row.Cells(3).Value.ToString

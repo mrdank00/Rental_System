@@ -48,6 +48,7 @@ Partial Class Form1
         Me.RecieveRentals1 = New Rental_System.RecieveRentals()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblHeader = New System.Windows.Forms.Label()
+        Me.RentalReports1 = New Rental_System.RentalReports()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class Form1
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -561,10 +563,10 @@ Partial Class Form1
         Me.BunifuPages1.Location = New System.Drawing.Point(0, 0)
         Me.BunifuPages1.Multiline = True
         Me.BunifuPages1.Name = "BunifuPages1"
-        Me.BunifuPages1.Page = Me.TabPage1
-        Me.BunifuPages1.PageIndex = 0
-        Me.BunifuPages1.PageName = "TabPage1"
-        Me.BunifuPages1.PageTitle = "Products"
+        Me.BunifuPages1.Page = Me.TabPage4
+        Me.BunifuPages1.PageIndex = 3
+        Me.BunifuPages1.PageName = "TabPage4"
+        Me.BunifuPages1.PageTitle = "Report"
         Me.BunifuPages1.SelectedIndex = 0
         Me.BunifuPages1.Size = New System.Drawing.Size(800, 426)
         Me.BunifuPages1.TabIndex = 0
@@ -611,7 +613,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(792, 367)
+        Me.TabPage2.Size = New System.Drawing.Size(792, 400)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Customers"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -621,7 +623,7 @@ Partial Class Form1
         Me.Customer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Customer1.Location = New System.Drawing.Point(3, 3)
         Me.Customer1.Name = "Customer1"
-        Me.Customer1.Size = New System.Drawing.Size(786, 361)
+        Me.Customer1.Size = New System.Drawing.Size(786, 394)
         Me.Customer1.TabIndex = 0
         '
         'TabPage3
@@ -630,7 +632,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 4)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(792, 367)
+        Me.TabPage3.Size = New System.Drawing.Size(792, 400)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Rent"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -640,15 +642,16 @@ Partial Class Form1
         Me.Rental1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Rental1.Location = New System.Drawing.Point(3, 3)
         Me.Rental1.Name = "Rental1"
-        Me.Rental1.Size = New System.Drawing.Size(786, 412)
+        Me.Rental1.Size = New System.Drawing.Size(786, 394)
         Me.Rental1.TabIndex = 0
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.RentalReports1)
         Me.TabPage4.Location = New System.Drawing.Point(4, 4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(792, 367)
+        Me.TabPage4.Size = New System.Drawing.Size(792, 400)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Report"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -659,7 +662,7 @@ Partial Class Form1
         Me.TabPage5.Location = New System.Drawing.Point(4, 4)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(792, 367)
+        Me.TabPage5.Size = New System.Drawing.Size(792, 400)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "RentalReturns"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -669,7 +672,7 @@ Partial Class Form1
         Me.RecieveRentals1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RecieveRentals1.Location = New System.Drawing.Point(3, 3)
         Me.RecieveRentals1.Name = "RecieveRentals1"
-        Me.RecieveRentals1.Size = New System.Drawing.Size(786, 361)
+        Me.RecieveRentals1.Size = New System.Drawing.Size(786, 394)
         Me.RecieveRentals1.TabIndex = 0
         '
         'Panel2
@@ -694,6 +697,14 @@ Partial Class Form1
         Me.lblHeader.TabIndex = 0
         Me.lblHeader.Text = "Name"
         '
+        'RentalReports1
+        '
+        Me.RentalReports1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RentalReports1.Location = New System.Drawing.Point(3, 3)
+        Me.RentalReports1.Name = "RentalReports1"
+        Me.RentalReports1.Size = New System.Drawing.Size(786, 394)
+        Me.RentalReports1.TabIndex = 0
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -713,6 +724,7 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -739,4 +751,5 @@ Partial Class Form1
     Friend WithEvents RecieveRentals1 As RecieveRentals
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblHeader As Label
+    Friend WithEvents RentalReports1 As RentalReports
 End Class

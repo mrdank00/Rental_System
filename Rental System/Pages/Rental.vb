@@ -152,7 +152,7 @@ Public Class Rental
     End Sub
 
     Private Sub lblItemName_Click(sender As Object, e As EventArgs) Handles lblItemName.Click
-        MsgBox(DateTimePicker1.Value)
+        'MsgBox(DateTimePicker1.Value)
         'Dim outto As DateTime
         'DateTime.TryParseExact(BunifuDatePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
         'MsgBox(BunifuDatePicker1.Text)
