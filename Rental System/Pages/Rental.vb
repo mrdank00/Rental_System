@@ -29,6 +29,13 @@ Public Class Rental
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+        For Each row As DataGridViewRow In gvRentals.Rows
+            If lblItemName.Text = row.Cells(0).Value Then
+                MsgBox("Item already added")
+                Exit Sub
+            End If
+        Next
         gvRentals.Rows.Add(lblItemName.Text, txtPrice.Text, txtQty.Text, txtAmt.Text, txtCat.Text, txtColour.Text, txtSize.Text)
     End Sub
 
@@ -58,7 +65,7 @@ Public Class Rental
         Invoiceno()
 
         For Each row As DataGridViewRow In gvRentals.Rows
-            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
+            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "',convert(datetime,'" + DateTime.Now + "',105))")
         Next
 
         For k = 0 To gvRentals.RowCount - 1
@@ -145,14 +152,14 @@ Public Class Rental
     End Sub
 
     Private Sub lblItemName_Click(sender As Object, e As EventArgs) Handles lblItemName.Click
-        MsgBox(DateTime.Now)
+        MsgBox(DateTimePicker1.Value)
         'Dim outto As DateTime
         'DateTime.TryParseExact(BunifuDatePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
         'MsgBox(BunifuDatePicker1.Text)
         'If RentCon.State = ConnectionState.Closed Then
         '    RentCon.Open()
         'End If
-        'cmd = New SqlCommand("select * from RentalTranx where RentedStamp='" + outto + "'", RentCon)
+        'cmd = New SqlCommand("select * from RentalTranx where CONVERT(VARCHAR(10), rentedstamp, 103) ='" + DateTimePicker1.Value + "'", RentCon)
         'da = New SqlDataAdapter(cmd)
         'tbl = New DataTable
         'da.Fill(tbl)
@@ -160,8 +167,6 @@ Public Class Rental
         'If tbl.Rows.Count = 0 Then
         '    MsgBox("Yawa")
         'Else
-
-
         'End If
         'RentCon.Close()
 
