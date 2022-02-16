@@ -58,7 +58,7 @@ Public Class Rental
         Invoiceno()
 
         For Each row As DataGridViewRow In gvRentals.Rows
-            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(1).Value + "','" + row.Cells(2).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
+            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "')")
         Next
 
         For k = 0 To gvRentals.RowCount - 1
@@ -145,36 +145,41 @@ Public Class Rental
     End Sub
 
     Private Sub lblItemName_Click(sender As Object, e As EventArgs) Handles lblItemName.Click
-        Dim outto As DateTime
-        DateTime.TryParseExact(BunifuDatePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
-        MsgBox(BunifuDatePicker1.Text)
-        If RentCon.State = ConnectionState.Closed Then
-            RentCon.Open()
-        End If
-        cmd = New SqlCommand("select * from RentalTranx where RentedStamp='" + outto + "'", RentCon)
-        da = New SqlDataAdapter(cmd)
-        tbl = New DataTable
-        da.Fill(tbl)
-        BunifuDataGridView1.DataSource = tbl
-        If tbl.Rows.Count = 0 Then
-            MsgBox("Yawa")
-        Else
+        MsgBox(DateTime.Now)
+        'Dim outto As DateTime
+        'DateTime.TryParseExact(BunifuDatePicker1.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, outto)
+        'MsgBox(BunifuDatePicker1.Text)
+        'If RentCon.State = ConnectionState.Closed Then
+        '    RentCon.Open()
+        'End If
+        'cmd = New SqlCommand("select * from RentalTranx where RentedStamp='" + outto + "'", RentCon)
+        'da = New SqlDataAdapter(cmd)
+        'tbl = New DataTable
+        'da.Fill(tbl)
+        'BunifuDataGridView1.DataSource = tbl
+        'If tbl.Rows.Count = 0 Then
+        '    MsgBox("Yawa")
+        'Else
 
 
-        End If
-        RentCon.Close()
+        'End If
+        'RentCon.Close()
 
-        lblItemName.Text = DateTime.Now
+        'lblItemName.Text = DateTime.Now
 
-        Dim myDateTime As Date = Date.Parse(lblItemName.Text)
-        Dim MyDate As Date = myDateTime.Date()
+        'Dim myDateTime As Date = Date.Parse(lblItemName.Text)
+        'Dim MyDate As Date = myDateTime.Date()
 
-        MsgBox(MyDate)
-        DateTime.Parse(lblItemName.Text)
-        MsgBox(DateTime.Parse(DateTime.Now))
+        'MsgBox(MyDate)
+        'DateTime.Parse(lblItemName.Text)
+        'MsgBox(DateTime.Parse(DateTime.Now))
     End Sub
 
     Private Sub Rental_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
         Display()
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
     End Sub
 End Class

@@ -30,7 +30,7 @@ Public Class RecieveRentals
             txtContact.Text = tbl.Rows(0)(2).ToString
             txtLocation.Text = tbl.Rows(0)(3).ToString
             For k = 0 To tbl.Rows.Count - 1
-                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(6).ToString, tbl.Rows(k)(13).ToString, tbl.Rows(k)(14).ToString, 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
+                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(6).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(13).ToString, tbl.Rows(k)(14).ToString, 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
             Next
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -86,6 +86,7 @@ Public Class RecieveRentals
             sum += gvRentals.Rows(k).Cells(5).Value
         Next
         lblTotal.Text = sum
+        Clear()
     End Sub
 
     Public Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
@@ -148,7 +149,7 @@ Public Class RecieveRentals
     End Sub
     Public Sub Clear()
         For Each control As Control In Me.Controls
-            If TypeOf control Is TextBox Or TypeOf control Is ComboBox Then
+            If TypeOf control Is TextBox Then
                 control.Text = ""
             End If
             'If TypeOf control Is ComboBox Then
