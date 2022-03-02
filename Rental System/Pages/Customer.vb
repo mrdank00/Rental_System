@@ -62,4 +62,8 @@
 
         End Try
     End Sub
+
+    Private Sub Customer_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
+        Display()
+    End Sub
 End Class

@@ -28,7 +28,7 @@ Module RentalCRUD
                 If result = 0 Then
                     MessageBox.Show("Failed.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
-                    MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             End With
             RentCon.Close()

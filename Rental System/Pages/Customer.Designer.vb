@@ -104,6 +104,7 @@ Partial Class Customer
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.BunifuDataGridView1.Location = New System.Drawing.Point(30, 187)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
+        Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -384,6 +385,7 @@ Partial Class Customer
         Me.lblId.Size = New System.Drawing.Size(13, 17)
         Me.lblId.TabIndex = 17
         Me.lblId.Text = "-"
+        Me.lblId.Visible = False
         '
         'Customer
         '

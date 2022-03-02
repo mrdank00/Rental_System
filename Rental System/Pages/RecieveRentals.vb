@@ -7,7 +7,7 @@ Public Class RecieveRentals
     End Sub
 
     Private Sub RecieveRentals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Display()
+        'Display()
         Clear()
     End Sub
 
@@ -90,39 +90,50 @@ Public Class RecieveRentals
     End Sub
 
     Public Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
-        If RentCon.State = ConnectionState.Closed Then
-            RentCon.Open()
-        End If
-        For Each row As DataGridViewRow In gvRentals.Rows
-            ' Insert("update Rentaltranx set qtyReturned ='" + row.Cells(3).Value.ToString + "',qtymissing='" + row.Cells(4).Value + "',amountmissing='" + row.Cells(5).Value + "' where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'")
-            Dim query = "update Rentaltranx set qtyReturned =@Qtyreturned,qtymissing=@qtymissing,amountmissing=@amountmissing,Recievedstamp=convert(datetime,'" + DateTime.Now + "',105) where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'"
-            cmd = New SqlCommand(query, RentCon)
-            With cmd
-                .Parameters.AddWithValue("@Qtyreturned", SqlDbType.Float).Value = row.Cells(3).Value.ToString
-                .Parameters.AddWithValue("@qtymissing", row.Cells(4).Value)
-                .Parameters.AddWithValue("@amountMissing", row.Cells(5).Value)
-                .ExecuteNonQuery()
-            End With
-        Next
-        For k = 0 To gvRentals.RowCount - 1
+        Try
+            If gvRentals.Rows.Count = 0 Then
+                MsgBox("Kindly select a Rental to Recieve")
+                Exit Sub
+            End If
+
+
             If RentCon.State = ConnectionState.Closed Then
                 RentCon.Open()
             End If
-            Dim sqll = "Select * from StockMast where itemname='" + gvRentals.Rows(k).Cells(0).Value + "'"
-            cmd = New SqlCommand(sqll, RentCon)
-            dr = cmd.ExecuteReader
-            While dr.Read
-                Dim query = "update StockMast set qty = '" & dr.Item("Qty") + gvRentals.Rows(k).Cells(3).Value & "' where itemname= '" & gvRentals.Rows(k).Cells(0).Value & "'"
+            For Each row As DataGridViewRow In gvRentals.Rows
+                ' Insert("update Rentaltranx set qtyReturned ='" + row.Cells(3).Value.ToString + "',qtymissing='" + row.Cells(4).Value + "',amountmissing='" + row.Cells(5).Value + "' where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'")
+                Dim query = "update Rentaltranx set qtyReturned =@Qtyreturned,qtymissing=@qtymissing,amountmissing=@amountmissing,Recievedstamp=convert(datetime,'" + DateTime.Now + "',105) where itemname='" + row.Cells(0).Value + "' and invoiceno='" + lblinvoice.Text + "'"
                 cmd = New SqlCommand(query, RentCon)
-                cmd.ExecuteNonQuery()
-            End While
-        Next
-        Insert("update RentalConfig set status='" + "Returned" + "' where invoiceno='" + lblinvoice.Text + "'")
-        Rentalreturninvoice()
-        Display()
-        gvRentals.Rows.Clear()
-        Clear()
-        BunifuSnackbar1.Show(Me.FindForm, "sucess")
+                With cmd
+                    .Parameters.AddWithValue("@Qtyreturned", SqlDbType.Float).Value = row.Cells(3).Value.ToString
+                    .Parameters.AddWithValue("@qtymissing", row.Cells(4).Value)
+                    .Parameters.AddWithValue("@amountMissing", row.Cells(5).Value)
+                    .ExecuteNonQuery()
+                End With
+            Next
+            For k = 0 To gvRentals.RowCount - 1
+                If RentCon.State = ConnectionState.Closed Then
+                    RentCon.Open()
+                End If
+                Dim sqll = "Select * from StockMast where itemname='" + gvRentals.Rows(k).Cells(0).Value + "'"
+                cmd = New SqlCommand(sqll, RentCon)
+                dr = cmd.ExecuteReader
+                While dr.Read
+                    Dim query = "update StockMast set qty = '" & dr.Item("Qty") + gvRentals.Rows(k).Cells(3).Value & "' where itemname= '" & gvRentals.Rows(k).Cells(0).Value & "'"
+                    cmd = New SqlCommand(query, RentCon)
+                    cmd.ExecuteNonQuery()
+                End While
+            Next
+            Insert("update RentalConfig set status='" + "Returned" + "' where invoiceno='" + lblinvoice.Text + "'")
+            Rentalreturninvoice()
+            Display()
+            gvRentals.Rows.Clear()
+            Clear()
+            BunifuSnackbar1.Show(Me.FindForm, "sucess")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
     Sub Rentalreturninvoice()
         Dim query = "select * from RentalTranx where invoiceno='" + lblinvoice.Text + "'"
@@ -139,9 +150,14 @@ Public Class RecieveRentals
 
         Dim report As New rptRentalRecieveInvoice
         report.SetDataSource(dt)
-        Reports.CrystalReportViewer2.ReportSource = report
-        Reports.Show()
-        Reports.CrystalReportViewer2.Refresh()
+        If ckPreview.Checked = True Then
+            Reports.CrystalReportViewer1.ReportSource = report
+            Reports.Show()
+            Reports.CrystalReportViewer1.Refresh()
+        End If
+        If ckPrint.Checked = True Then
+            report.PrintToPrinter(1, True, 0, 0)
+        End If
     End Sub
 
     Private Sub gvRentals_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles gvRentals.RowsAdded

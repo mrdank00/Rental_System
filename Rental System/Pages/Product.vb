@@ -11,11 +11,41 @@ Public Class Product
             MsgBox("Item Name already Exits")
             Exit Sub
         End If
-
         Insert("insert into Stockmast(Itemname,price,Qty,category,colour,Size) values('" + txtname.Text + "','" + txtPrice.Text + "','" + txtqty.Text + "','" + cbCat.Text + "','" + cbcolour.Text + "','" + cbSize.Text + "')")
+        If cbCat.SelectedIndex = -1 Then
+            cmd = New SqlCommand("select category from combofeed where category='" + cbCat.Text + "'", RentCon)
+            da = New SqlDataAdapter(cmd)
+            tbl = New DataTable
+            da.Fill(tbl)
+            If tbl.Rows.Count = 0 Then
+                Insert("insert into combofeed(category) values('" + cbCat.Text + "')")
+            End If
+
+        End If
+        If cbcolour.SelectedIndex = -1 Then
+            cmd = New SqlCommand("select colour from combofeed where colour='" + cbcolour.Text + "'", RentCon)
+            da = New SqlDataAdapter(cmd)
+            tbl = New DataTable
+            da.Fill(tbl)
+            If tbl.Rows.Count = 0 Then
+                Insert("insert into combofeed(colour) values('" + cbcolour.Text + "')")
+            End If
+
+        End If
+        If cbSize.SelectedIndex = -1 Then
+            cmd = New SqlCommand("select size from combofeed where size='" + cbSize.Text + "'", RentCon)
+            da = New SqlDataAdapter(cmd)
+            tbl = New DataTable
+            da.Fill(tbl)
+            If tbl.Rows.Count = 0 Then
+                Insert("insert into combofeed(size) values('" + cbSize.Text + "')")
+            End If
+
+        End If
+
         Clear()
         Display()
-        BunifuSnackbar1.Show(Me.FindForm, "sucess")
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
     End Sub
     Public Sub Clear()
         For Each control As Control In Me.Controls
@@ -29,6 +59,9 @@ Public Class Product
     End Sub
     Public Sub Display()
         Reload("select * from stockMast", BunifuDataGridView1)
+        ComboFeed("select category from combofeed", cbCat, 0)
+        ComboFeed("select size from combofeed", cbSize, 0)
+        ComboFeed("select colour from combofeed", cbcolour, 0)
     End Sub
 
     Private Sub Product_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -44,7 +77,7 @@ Public Class Product
         Display()
         Clear()
         lblId.Text = "-"
-        BunifuSnackbar1.Show(Me.FindForm, "Sucess")
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
     End Sub
 
     Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
@@ -71,6 +104,10 @@ Public Class Product
         Display()
         Clear()
         lblId.Text = "-"
-        BunifuSnackbar1.Show(Me.FindForm, "Sucess")
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
+    End Sub
+
+    Private Sub Product_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
+        Display()
     End Sub
 End Class

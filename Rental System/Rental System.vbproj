@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,6 +61,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rent_logo-removebg-preview1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -289,6 +292,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -338,6 +342,12 @@
     </Compile>
     <Compile Include="RentalCON.vb" />
     <Compile Include="RentalCRUD.vb" />
+    <Compile Include="RentalPreloader.Designer.vb">
+      <DependentUpon>RentalPreloader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RentalPreloader.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reports\dsRental.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -404,6 +414,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptRentalsperDate.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RentalPreloader.resx">
+      <DependentUpon>RentalPreloader.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Reports.resx">
       <DependentUpon>Reports.vb</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +469,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>RentalDB.mdf</DependentUpon>
     </Content>
+    <Content Include="rent_logo-removebg-preview1.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

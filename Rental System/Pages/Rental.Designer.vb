@@ -23,12 +23,12 @@ Partial Class Rental
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Rental))
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.gvRentals = New Bunifu.UI.WinForms.BunifuDataGridView()
@@ -69,6 +69,15 @@ Partial Class Rental
         Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
         Me.BunifuGroupBox1 = New Bunifu.UI.WinForms.BunifuGroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ckPrint = New Bunifu.UI.WinForms.BunifuCheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.ckPreview = New Bunifu.UI.WinForms.BunifuCheckBox()
+        Me.ckCashPaid = New Bunifu.UI.WinForms.BunifuCheckBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.BunifuDatePicker1 = New Bunifu.UI.WinForms.BunifuDatePicker()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,9 +88,9 @@ Partial Class Rental
         'BunifuDataGridView1
         '
         Me.BunifuDataGridView1.AllowCustomTheming = False
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black
-        Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.BunifuDataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
@@ -89,14 +98,14 @@ Partial Class Rental
         Me.BunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.BunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.BunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle26.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BunifuDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.BunifuDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.BunifuDataGridView1.ColumnHeadersHeight = 40
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
@@ -116,14 +125,14 @@ Partial Class Rental
         Me.BunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.BunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.BunifuDataGridView1.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.BunifuDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.BunifuDataGridView1.EnableHeadersVisualStyles = False
         Me.BunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
@@ -131,6 +140,7 @@ Partial Class Rental
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
         Me.BunifuDataGridView1.Location = New System.Drawing.Point(15, 109)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
+        Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -143,9 +153,9 @@ Partial Class Rental
         Me.gvRentals.AllowCustomTheming = False
         Me.gvRentals.AllowUserToAddRows = False
         Me.gvRentals.AllowUserToOrderColumns = True
-        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black
-        Me.gvRentals.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.gvRentals.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.gvRentals.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -154,14 +164,14 @@ Partial Class Rental
         Me.gvRentals.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gvRentals.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.gvRentals.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.gvRentals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI Semibold", 11.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(115, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.gvRentals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.gvRentals.ColumnHeadersHeight = 40
         Me.gvRentals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Category, Me.Column4, Me.Column5})
         Me.gvRentals.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -182,14 +192,14 @@ Partial Class Rental
         Me.gvRentals.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.gvRentals.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.gvRentals.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.gvRentals.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.gvRentals.DefaultCellStyle = DataGridViewCellStyle6
         Me.gvRentals.EnableHeadersVisualStyles = False
         Me.gvRentals.GridColor = System.Drawing.Color.FromArgb(CType(CType(221, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.gvRentals.HeaderBackColor = System.Drawing.Color.DodgerBlue
@@ -400,10 +410,10 @@ Partial Class Rental
         Me.BunifuThinButton22.IdleFillColor = System.Drawing.Color.White
         Me.BunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaGreen
         Me.BunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton22.Location = New System.Drawing.Point(906, 503)
+        Me.BunifuThinButton22.Location = New System.Drawing.Point(977, 503)
         Me.BunifuThinButton22.Margin = New System.Windows.Forms.Padding(5)
         Me.BunifuThinButton22.Name = "BunifuThinButton22"
-        Me.BunifuThinButton22.Size = New System.Drawing.Size(198, 65)
+        Me.BunifuThinButton22.Size = New System.Drawing.Size(150, 65)
         Me.BunifuThinButton22.TabIndex = 21
         Me.BunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -431,7 +441,7 @@ Partial Class Rental
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(7, 204)
+        Me.Label10.Location = New System.Drawing.Point(7, 124)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(48, 17)
         Me.Label10.TabIndex = 25
@@ -441,7 +451,7 @@ Partial Class Rental
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 242)
+        Me.Label11.Location = New System.Drawing.Point(6, 162)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(59, 17)
         Me.Label11.TabIndex = 27
@@ -451,7 +461,7 @@ Partial Class Rental
         '
         Me.txtContact.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.txtContact.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContact.Location = New System.Drawing.Point(944, 384)
+        Me.txtContact.Location = New System.Drawing.Point(65, 159)
         Me.txtContact.Name = "txtContact"
         Me.txtContact.ReadOnly = True
         Me.txtContact.Size = New System.Drawing.Size(172, 27)
@@ -461,7 +471,7 @@ Partial Class Rental
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(0, 281)
+        Me.Label12.Location = New System.Drawing.Point(0, 201)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(65, 17)
         Me.Label12.TabIndex = 29
@@ -471,7 +481,7 @@ Partial Class Rental
         '
         Me.txtLocation.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.txtLocation.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLocation.Location = New System.Drawing.Point(944, 417)
+        Me.txtLocation.Location = New System.Drawing.Point(65, 195)
         Me.txtLocation.Name = "txtLocation"
         Me.txtLocation.ReadOnly = True
         Me.txtLocation.Size = New System.Drawing.Size(172, 27)
@@ -501,7 +511,7 @@ Partial Class Rental
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(87, 147)
+        Me.Label15.Location = New System.Drawing.Point(905, 441)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(72, 17)
         Me.Label15.TabIndex = 33
@@ -512,7 +522,7 @@ Partial Class Rental
         Me.cbCustname.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.cbCustname.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCustname.FormattingEnabled = True
-        Me.cbCustname.Location = New System.Drawing.Point(944, 346)
+        Me.cbCustname.Location = New System.Drawing.Point(65, 124)
         Me.cbCustname.Name = "cbCustname"
         Me.cbCustname.Size = New System.Drawing.Size(172, 29)
         Me.cbCustname.TabIndex = 34
@@ -526,6 +536,7 @@ Partial Class Rental
         Me.lblinvoice.Size = New System.Drawing.Size(72, 17)
         Me.lblinvoice.TabIndex = 35
         Me.lblinvoice.Text = "InvoiceNO"
+        Me.lblinvoice.Visible = False
         '
         'BunifuSnackbar1
         '
@@ -619,32 +630,275 @@ Partial Class Rental
         Me.BunifuGroupBox1.Size = New System.Drawing.Size(509, 136)
         Me.BunifuGroupBox1.TabIndex = 38
         Me.BunifuGroupBox1.TabStop = False
-        Me.BunifuGroupBox1.Text = "BunifuGroupBox1"
+        Me.BunifuGroupBox1.Text = "Quantity"
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.BunifuDatePicker1)
+        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.Label17)
+        Me.GroupBox1.Controls.Add(Me.TextBox2)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label14)
-        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.lblTotal)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Location = New System.Drawing.Point(879, 142)
+        Me.GroupBox1.Controls.Add(Me.txtLocation)
+        Me.GroupBox1.Controls.Add(Me.cbCustname)
+        Me.GroupBox1.Controls.Add(Me.txtContact)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(879, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(254, 337)
+        Me.GroupBox1.Size = New System.Drawing.Size(254, 397)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "Total"
+        '
+        'ckPrint
+        '
+        Me.ckPrint.AllowBindingControlAnimation = True
+        Me.ckPrint.AllowBindingControlColorChanges = False
+        Me.ckPrint.AllowBindingControlLocation = True
+        Me.ckPrint.AllowCheckBoxAnimation = False
+        Me.ckPrint.AllowCheckmarkAnimation = True
+        Me.ckPrint.AllowOnHoverStates = True
+        Me.ckPrint.AutoCheck = True
+        Me.ckPrint.BackColor = System.Drawing.Color.Transparent
+        Me.ckPrint.BackgroundImage = CType(resources.GetObject("ckPrint.BackgroundImage"), System.Drawing.Image)
+        Me.ckPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ckPrint.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right
+        Me.ckPrint.BorderRadius = 12
+        Me.ckPrint.Checked = True
+        Me.ckPrint.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
+        Me.ckPrint.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ckPrint.CustomCheckmarkImage = Nothing
+        Me.ckPrint.Location = New System.Drawing.Point(882, 507)
+        Me.ckPrint.MinimumSize = New System.Drawing.Size(17, 17)
+        Me.ckPrint.Name = "ckPrint"
+        Me.ckPrint.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.ckPrint.OnCheck.BorderRadius = 12
+        Me.ckPrint.OnCheck.BorderThickness = 2
+        Me.ckPrint.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue
+        Me.ckPrint.OnCheck.CheckmarkColor = System.Drawing.Color.White
+        Me.ckPrint.OnCheck.CheckmarkThickness = 2
+        Me.ckPrint.OnDisable.BorderColor = System.Drawing.Color.LightGray
+        Me.ckPrint.OnDisable.BorderRadius = 12
+        Me.ckPrint.OnDisable.BorderThickness = 2
+        Me.ckPrint.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckPrint.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray
+        Me.ckPrint.OnDisable.CheckmarkThickness = 2
+        Me.ckPrint.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckPrint.OnHoverChecked.BorderRadius = 12
+        Me.ckPrint.OnHoverChecked.BorderThickness = 2
+        Me.ckPrint.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckPrint.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White
+        Me.ckPrint.OnHoverChecked.CheckmarkThickness = 2
+        Me.ckPrint.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckPrint.OnHoverUnchecked.BorderRadius = 12
+        Me.ckPrint.OnHoverUnchecked.BorderThickness = 1
+        Me.ckPrint.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckPrint.OnUncheck.BorderColor = System.Drawing.Color.DarkGray
+        Me.ckPrint.OnUncheck.BorderRadius = 12
+        Me.ckPrint.OnUncheck.BorderThickness = 1
+        Me.ckPrint.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckPrint.Size = New System.Drawing.Size(17, 17)
+        Me.ckPrint.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu
+        Me.ckPrint.TabIndex = 40
+        Me.ckPrint.ThreeState = False
+        Me.ckPrint.ToolTipText = Nothing
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(905, 508)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(38, 17)
+        Me.Label8.TabIndex = 34
+        Me.Label8.Text = "Print"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(905, 541)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(56, 17)
+        Me.Label13.TabIndex = 41
+        Me.Label13.Text = "Preview"
+        '
+        'ckPreview
+        '
+        Me.ckPreview.AllowBindingControlAnimation = True
+        Me.ckPreview.AllowBindingControlColorChanges = False
+        Me.ckPreview.AllowBindingControlLocation = True
+        Me.ckPreview.AllowCheckBoxAnimation = False
+        Me.ckPreview.AllowCheckmarkAnimation = True
+        Me.ckPreview.AllowOnHoverStates = True
+        Me.ckPreview.AutoCheck = True
+        Me.ckPreview.BackColor = System.Drawing.Color.Transparent
+        Me.ckPreview.BackgroundImage = CType(resources.GetObject("ckPreview.BackgroundImage"), System.Drawing.Image)
+        Me.ckPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ckPreview.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right
+        Me.ckPreview.BorderRadius = 12
+        Me.ckPreview.Checked = False
+        Me.ckPreview.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked
+        Me.ckPreview.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ckPreview.CustomCheckmarkImage = Nothing
+        Me.ckPreview.Location = New System.Drawing.Point(882, 540)
+        Me.ckPreview.MinimumSize = New System.Drawing.Size(17, 17)
+        Me.ckPreview.Name = "ckPreview"
+        Me.ckPreview.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.ckPreview.OnCheck.BorderRadius = 12
+        Me.ckPreview.OnCheck.BorderThickness = 2
+        Me.ckPreview.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue
+        Me.ckPreview.OnCheck.CheckmarkColor = System.Drawing.Color.White
+        Me.ckPreview.OnCheck.CheckmarkThickness = 2
+        Me.ckPreview.OnDisable.BorderColor = System.Drawing.Color.LightGray
+        Me.ckPreview.OnDisable.BorderRadius = 12
+        Me.ckPreview.OnDisable.BorderThickness = 2
+        Me.ckPreview.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckPreview.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray
+        Me.ckPreview.OnDisable.CheckmarkThickness = 2
+        Me.ckPreview.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckPreview.OnHoverChecked.BorderRadius = 12
+        Me.ckPreview.OnHoverChecked.BorderThickness = 2
+        Me.ckPreview.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckPreview.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White
+        Me.ckPreview.OnHoverChecked.CheckmarkThickness = 2
+        Me.ckPreview.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckPreview.OnHoverUnchecked.BorderRadius = 12
+        Me.ckPreview.OnHoverUnchecked.BorderThickness = 1
+        Me.ckPreview.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckPreview.OnUncheck.BorderColor = System.Drawing.Color.DarkGray
+        Me.ckPreview.OnUncheck.BorderRadius = 12
+        Me.ckPreview.OnUncheck.BorderThickness = 1
+        Me.ckPreview.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckPreview.Size = New System.Drawing.Size(17, 17)
+        Me.ckPreview.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu
+        Me.ckPreview.TabIndex = 42
+        Me.ckPreview.ThreeState = False
+        Me.ckPreview.ToolTipText = Nothing
+        '
+        'ckCashPaid
+        '
+        Me.ckCashPaid.AllowBindingControlAnimation = True
+        Me.ckCashPaid.AllowBindingControlColorChanges = False
+        Me.ckCashPaid.AllowBindingControlLocation = True
+        Me.ckCashPaid.AllowCheckBoxAnimation = False
+        Me.ckCashPaid.AllowCheckmarkAnimation = True
+        Me.ckCashPaid.AllowOnHoverStates = True
+        Me.ckCashPaid.AutoCheck = True
+        Me.ckCashPaid.BackColor = System.Drawing.Color.Transparent
+        Me.ckCashPaid.BackgroundImage = CType(resources.GetObject("ckCashPaid.BackgroundImage"), System.Drawing.Image)
+        Me.ckCashPaid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ckCashPaid.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right
+        Me.ckCashPaid.BorderRadius = 12
+        Me.ckCashPaid.Checked = True
+        Me.ckCashPaid.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked
+        Me.ckCashPaid.Cursor = System.Windows.Forms.Cursors.Default
+        Me.ckCashPaid.CustomCheckmarkImage = Nothing
+        Me.ckCashPaid.Location = New System.Drawing.Point(994, 431)
+        Me.ckCashPaid.MinimumSize = New System.Drawing.Size(17, 17)
+        Me.ckCashPaid.Name = "ckCashPaid"
+        Me.ckCashPaid.OnCheck.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.ckCashPaid.OnCheck.BorderRadius = 12
+        Me.ckCashPaid.OnCheck.BorderThickness = 2
+        Me.ckCashPaid.OnCheck.CheckBoxColor = System.Drawing.Color.DodgerBlue
+        Me.ckCashPaid.OnCheck.CheckmarkColor = System.Drawing.Color.White
+        Me.ckCashPaid.OnCheck.CheckmarkThickness = 2
+        Me.ckCashPaid.OnDisable.BorderColor = System.Drawing.Color.LightGray
+        Me.ckCashPaid.OnDisable.BorderRadius = 12
+        Me.ckCashPaid.OnDisable.BorderThickness = 2
+        Me.ckCashPaid.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckCashPaid.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray
+        Me.ckCashPaid.OnDisable.CheckmarkThickness = 2
+        Me.ckCashPaid.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckCashPaid.OnHoverChecked.BorderRadius = 12
+        Me.ckCashPaid.OnHoverChecked.BorderThickness = 2
+        Me.ckCashPaid.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ckCashPaid.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White
+        Me.ckCashPaid.OnHoverChecked.CheckmarkThickness = 2
+        Me.ckCashPaid.OnHoverUnchecked.BorderColor = System.Drawing.Color.Black
+        Me.ckCashPaid.OnHoverUnchecked.BorderRadius = 15
+        Me.ckCashPaid.OnHoverUnchecked.BorderThickness = 2
+        Me.ckCashPaid.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckCashPaid.OnUncheck.BorderColor = System.Drawing.Color.DarkGray
+        Me.ckCashPaid.OnUncheck.BorderRadius = 12
+        Me.ckCashPaid.OnUncheck.BorderThickness = 1
+        Me.ckCashPaid.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent
+        Me.ckCashPaid.Size = New System.Drawing.Size(40, 40)
+        Me.ckCashPaid.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu
+        Me.ckCashPaid.TabIndex = 43
+        Me.ckCashPaid.ThreeState = False
+        Me.ckCashPaid.ToolTipText = Nothing
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(6, 245)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(121, 17)
+        Me.Label16.TabIndex = 36
+        Me.Label16.Text = "Delivery Location:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.TextBox2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(10, 265)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(227, 27)
+        Me.TextBox2.TabIndex = 35
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(6, 298)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(97, 17)
+        Me.Label17.TabIndex = 38
+        Me.Label17.Text = "Delivery Date:"
+        '
+        'BunifuDatePicker1
+        '
+        Me.BunifuDatePicker1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuDatePicker1.BorderColor = System.Drawing.Color.Silver
+        Me.BunifuDatePicker1.BorderRadius = 1
+        Me.BunifuDatePicker1.Color = System.Drawing.Color.Silver
+        Me.BunifuDatePicker1.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin
+        Me.BunifuDatePicker1.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left
+        Me.BunifuDatePicker1.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuDatePicker1.DisplayWeekNumbers = False
+        Me.BunifuDatePicker1.DPHeight = 0
+        Me.BunifuDatePicker1.FillDatePicker = False
+        Me.BunifuDatePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BunifuDatePicker1.ForeColor = System.Drawing.Color.Black
+        Me.BunifuDatePicker1.Icon = CType(resources.GetObject("BunifuDatePicker1.Icon"), System.Drawing.Image)
+        Me.BunifuDatePicker1.IconColor = System.Drawing.Color.Gray
+        Me.BunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right
+        Me.BunifuDatePicker1.LeftTextMargin = 5
+        Me.BunifuDatePicker1.Location = New System.Drawing.Point(13, 321)
+        Me.BunifuDatePicker1.MinimumSize = New System.Drawing.Size(0, 32)
+        Me.BunifuDatePicker1.Name = "BunifuDatePicker1"
+        Me.BunifuDatePicker1.Size = New System.Drawing.Size(220, 32)
+        Me.BunifuDatePicker1.TabIndex = 39
         '
         'Rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.ckCashPaid)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.ckPreview)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.ckPrint)
         Me.Controls.Add(Me.lblinvoice)
-        Me.Controls.Add(Me.cbCustname)
-        Me.Controls.Add(Me.txtLocation)
-        Me.Controls.Add(Me.txtContact)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.BunifuThinButton22)
         Me.Controls.Add(Me.Label7)
@@ -711,4 +965,13 @@ Partial Class Rental
     Friend WithEvents BunifuSnackbar1 As Bunifu.UI.WinForms.BunifuSnackbar
     Friend WithEvents BunifuGroupBox1 As Bunifu.UI.WinForms.BunifuGroupBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ckPrint As Bunifu.UI.WinForms.BunifuCheckBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents ckPreview As Bunifu.UI.WinForms.BunifuCheckBox
+    Friend WithEvents ckCashPaid As Bunifu.UI.WinForms.BunifuCheckBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents BunifuDatePicker1 As Bunifu.UI.WinForms.BunifuDatePicker
+    Friend WithEvents Label17 As Label
 End Class

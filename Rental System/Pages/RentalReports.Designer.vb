@@ -23,12 +23,12 @@ Partial Class RentalReports
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RentalReports))
-        Dim BorderEdges3 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
+        Dim BorderEdges2 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
         Me.cbReport = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.BunifuButton21 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,6 +36,7 @@ Partial Class RentalReports
         '
         Me.cbReport.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbReport.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbReport.FormattingEnabled = True
         Me.cbReport.Items.AddRange(New Object() {"Stock Per Category", "Customers Info", "Rentals Per Date"})
@@ -53,19 +54,6 @@ Partial Class RentalReports
         Me.Label1.Size = New System.Drawing.Size(138, 17)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Select Report to view"
-        '
-        'CrystalReportViewer1
-        '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(28, 100)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(716, 322)
-        Me.CrystalReportViewer1.TabIndex = 2
         '
         'BunifuButton21
         '
@@ -87,11 +75,11 @@ Partial Class RentalReports
         Me.BunifuButton21.ColorContrastOnClick = 45
         Me.BunifuButton21.ColorContrastOnHover = 45
         Me.BunifuButton21.Cursor = System.Windows.Forms.Cursors.Default
-        BorderEdges3.BottomLeft = True
-        BorderEdges3.BottomRight = True
-        BorderEdges3.TopLeft = True
-        BorderEdges3.TopRight = True
-        Me.BunifuButton21.CustomizableEdges = BorderEdges3
+        BorderEdges2.BottomLeft = True
+        BorderEdges2.BottomRight = True
+        BorderEdges2.TopLeft = True
+        BorderEdges2.TopRight = True
+        Me.BunifuButton21.CustomizableEdges = BorderEdges2
         Me.BunifuButton21.DialogResult = System.Windows.Forms.DialogResult.None
         Me.BunifuButton21.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
         Me.BunifuButton21.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -171,11 +159,21 @@ Partial Class RentalReports
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Location = New System.Drawing.Point(28, 114)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(730, 313)
+        Me.Panel1.TabIndex = 5
+        '
         'RentalReports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.cbReport)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "RentalReports"
@@ -188,7 +186,7 @@ Partial Class RentalReports
 
     Friend WithEvents cbReport As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents BunifuButton21 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Panel1 As Panel
 End Class

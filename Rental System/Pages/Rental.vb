@@ -3,8 +3,9 @@ Imports System.Globalization
 Public Class Rental
     Dim dt As New dsRental
     Private Sub Rental_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Display()
-        Invoiceno()
+        'Display()
+        'Invoiceno()
+
     End Sub
     Sub Display()
         Reload("Select * from Stockmast", BunifuDataGridView1)
@@ -37,6 +38,11 @@ Public Class Rental
             End If
         Next
         gvRentals.Rows.Add(lblItemName.Text, txtPrice.Text, txtQty.Text, txtAmt.Text, txtCat.Text, txtColour.Text, txtSize.Text)
+        For Each control As Control In Me.BunifuGroupBox1.Controls
+            If TypeOf control Is TextBox Then
+                control.Text = ""
+            End If
+        Next
     End Sub
 
     Private Sub txtPrice_TextChanged(sender As Object, e As EventArgs) Handles txtPrice.TextChanged
@@ -60,31 +66,52 @@ Public Class Rental
     End Sub
 
     Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
-        Insert("insert into Rentalconfig(Customername,location,contact,total,status) values('" + cbCustname.Text + "','" + txtLocation.Text + "','" + txtContact.Text + "','" + lblTotal.Text + "','" + "Booked" + "')")
-
-        Invoiceno()
-
-        For Each row As DataGridViewRow In gvRentals.Rows
-            Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "',convert(datetime,'" + DateTime.Now + "',105))")
-        Next
-
-        For k = 0 To gvRentals.RowCount - 1
-            If RentCon.State = ConnectionState.Closed Then
-                RentCon.Open()
+        Try
+            If gvRentals.Rows.Count = 0 Then
+                MsgBox("Kindly select items to rent")
+                Exit Sub
             End If
-            Dim sqll = "Select * from StockMast where itemname='" + gvRentals.Rows(k).Cells(0).Value + "'"
-            cmd = New SqlCommand(sqll, RentCon)
-            dr = cmd.ExecuteReader
-            While dr.Read
-                Dim query = "update StockMast set qty = '" & dr.Item("Qty") - gvRentals.Rows(k).Cells(2).Value & "' where itemname= '" & gvRentals.Rows(k).Cells(0).Value & "'"
-                cmd = New SqlCommand(query, RentCon)
-                cmd.ExecuteNonQuery()
-            End While
-        Next
-        Rentalinvoice()
-        Display()
-        Clear()
-        BunifuSnackbar1.Show(Me.FindForm, "Success")
+
+            If cbCustname.Text = "" Or cbCustname.SelectedIndex = -1 Or txtContact.Text = "" Or txtLocation.Text = "" Then
+                MsgBox("Select or enter Customer details to Proceed")
+                cbCustname.Focus()
+                Exit Sub
+            End If
+
+            If ckCashPaid.Checked = False Then
+                MsgBox("Only Cash Paid Rentals are allowed")
+                Exit Sub
+            End If
+            Insert("insert into Rentalconfig(Customername,location,contact,total,status) values('" + cbCustname.Text + "','" + txtLocation.Text + "','" + txtContact.Text + "','" + lblTotal.Text + "','" + "Booked" + "')")
+
+            Invoiceno()
+
+            For Each row As DataGridViewRow In gvRentals.Rows
+                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "',convert(datetime,'" + DateTime.Now + "',105))")
+            Next
+
+            For k = 0 To gvRentals.RowCount - 1
+                If RentCon.State = ConnectionState.Closed Then
+                    RentCon.Open()
+                End If
+                Dim sqll = "Select * from StockMast where itemname='" + gvRentals.Rows(k).Cells(0).Value + "'"
+                cmd = New SqlCommand(sqll, RentCon)
+                dr = cmd.ExecuteReader
+                While dr.Read
+                    Dim query = "update StockMast set qty = '" & dr.Item("Qty") - gvRentals.Rows(k).Cells(2).Value & "' where itemname= '" & gvRentals.Rows(k).Cells(0).Value & "'"
+                    cmd = New SqlCommand(query, RentCon)
+                    cmd.ExecuteNonQuery()
+                End While
+            Next
+            Rentalinvoice()
+            Display()
+            Clear()
+            gvRentals.Rows.Clear()
+            BunifuSnackbar1.Show(Me.FindForm, "Success")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Sub Rentalinvoice()
@@ -102,9 +129,17 @@ Public Class Rental
 
         Dim report As New rptRentedInvoice
         report.SetDataSource(dt)
-        Reports.CrystalReportViewer2.ReportSource = report
-        Reports.Show()
-        Reports.CrystalReportViewer2.Refresh()
+
+        If ckPrint.Checked = True Then
+            report.PrintToPrinter(1, True, 0, 0)
+        End If
+        If ckPreview.Checked = True Then
+            Reports.CrystalReportViewer1.ReportSource = report
+            Reports.Hide()
+            Reports.Show()
+            Reports.CrystalReportViewer1.Refresh()
+        End If
+
     End Sub
     Sub Invoiceno()
         If RentCon.State = ConnectionState.Closed Then
@@ -182,6 +217,7 @@ Public Class Rental
 
     Private Sub Rental_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
         Display()
+        Invoiceno()
     End Sub
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click

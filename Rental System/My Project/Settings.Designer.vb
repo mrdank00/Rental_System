@@ -69,7 +69,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\RentalDB.mdf;"& _ 
-            "Integrated Security=True;MultipleActiveResultSets=true")>  _
+            "Integrated Security=True;MultipleActiveResultSets=true;Connect Timeout=30")>  _
         Public ReadOnly Property RentalString() As String
             Get
                 Return CType(Me("RentalString"),String)
@@ -80,7 +80,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\RentalDB.mdf;"& _ 
-            "Integrated Security=True")>  _
+            "Integrated Security=True;MultipleActiveResultSets=true;Connect Timeout=30")>  _
         Public ReadOnly Property RentalDBConnectionString1() As String
             Get
                 Return CType(Me("RentalDBConnectionString1"),String)
