@@ -353,6 +353,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRental.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\dsRental.vb">
+      <DependentUpon>dsRental.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Reports.Designer.vb">
       <DependentUpon>Reports.vb</DependentUpon>
     </Compile>

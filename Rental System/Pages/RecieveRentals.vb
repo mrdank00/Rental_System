@@ -168,9 +168,9 @@ Public Class RecieveRentals
             If TypeOf control Is TextBox Then
                 control.Text = ""
             End If
-            'If TypeOf control Is ComboBox Then
-            '    control.Text = ""
-            'End If
+            If TypeOf control Is ComboBox Then
+                control.Text = ""
+            End If
         Next
     End Sub
 

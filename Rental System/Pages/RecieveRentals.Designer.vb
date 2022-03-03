@@ -524,7 +524,7 @@ Partial Class RecieveRentals
         Me.GroupBox1.Size = New System.Drawing.Size(522, 117)
         Me.GroupBox1.TabIndex = 71
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "Quantities"
         '
         'GroupBox2
         '
@@ -539,7 +539,7 @@ Partial Class RecieveRentals
         Me.GroupBox2.Size = New System.Drawing.Size(245, 419)
         Me.GroupBox2.TabIndex = 72
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Total"
         '
         'BunifuSnackbar1
         '
