@@ -78,7 +78,7 @@ Public Class Rental
                 Exit Sub
             End If
 
-            If ckCashPaid.Checked = False Then
+            If Val(txtCashPaid.Text) <= 0 Then
                 MsgBox("Only Cash Paid Rentals are allowed")
                 Exit Sub
             End If
@@ -87,7 +87,7 @@ Public Class Rental
             Invoiceno()
 
             For Each row As DataGridViewRow In gvRentals.Rows
-                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,Deliverylocation,DeliveryDate,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + txtDelLocation.Text + "','" + dpDelDate.Text + "',convert(datetime,'" + DateTime.Now + "',105))")
+                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,Deliverylocation,DeliveryDate,cashdeposited,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + txtDelLocation.Text + "','" + dpDelDate.Text + "','" + txtCashPaid.Text + "',convert(datetime,'" + DateTime.Now + "',105))")
             Next
 
             For k = 0 To gvRentals.RowCount - 1

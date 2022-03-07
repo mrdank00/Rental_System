@@ -274,18 +274,6 @@
         7ddGOad1eAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="ckCashPaid.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFESURBVFhH7ZihUsRADEArTyJP3HVPIk8ikUg+AVmJRJ5D
-        bsswg0TyCUjkfQISiUTiEpJe6La3yyAy3YWZZOZNRZPmTbqtSPWvw93h6drjFbGbjRYa18GZtPw93CMu
-        6g5uqfCzbhGz0sGTu8elqMThPG5J7DUUjIrn4qgH9f9YebwUpRA8Obr5lirKhvTlt0fD2ojaIWi8D1FB
-        UeBZ1Ibp5T9zPyGTHKbIZy9K+gMMZ3Ht4TqVUBr+DYkg7lIJpTFBLSaoxQS1mKAWE9RiglpMUIsJajFB
-        LSaoxQS1BMEWb1IJpRkEVx1cpBKKEZZITS/oPJ6MbxQn7Ga2vSBH3cJLlFgQXgWK2iH6de/3hqvoJAH4
-        ysdO1ELwO58k5xLlPpNe4EUpDl5ok+h+8oBMUN/35ORSIaINf+qzQ785+iDOpfUoquoLmWoSEcJfKqEA
-        AAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>62</value>
   </metadata>
