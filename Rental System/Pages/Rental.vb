@@ -20,6 +20,7 @@ Public Class Rental
             txtCat.Text = row.Cells(4).Value.ToString()
             txtColour.Text = row.Cells(5).Value.ToString()
             txtSize.Text = row.Cells(6).Value.ToString()
+            lblactualqty.text = row.Cells(3).Value.ToString()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -87,7 +88,7 @@ Public Class Rental
             Invoiceno()
 
             For Each row As DataGridViewRow In gvRentals.Rows
-                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,Deliverylocation,DeliveryDate,cashdeposited,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + txtDelLocation.Text + "','" + dpDelDate.Text + "','" + txtCashPaid.Text + "',convert(datetime,'" + DateTime.Now + "',105))")
+                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,Deliverylocation,DeliveryDate,cashdeposited,DeliveryCost,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + txtDelLocation.Text + "','" + dpDelDate.Text + "','" + txtCashPaid.Text + "','" + txtdelcost.Text + "',convert(datetime,'" + DateTime.Now + "',105))")
             Next
 
             For k = 0 To gvRentals.RowCount - 1
@@ -221,6 +222,10 @@ Public Class Rental
     End Sub
 
     Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
 
     End Sub
 End Class

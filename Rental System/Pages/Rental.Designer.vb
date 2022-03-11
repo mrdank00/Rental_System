@@ -55,7 +55,7 @@ Partial Class Rental
         Me.txtSize = New System.Windows.Forms.TextBox()
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.lblItemName = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblActualQty = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtContact = New System.Windows.Forms.TextBox()
@@ -78,6 +78,8 @@ Partial Class Rental
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ckPreview = New Bunifu.UI.WinForms.BunifuCheckBox()
         Me.txtCashPaid = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtdelcost = New System.Windows.Forms.TextBox()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -427,15 +429,15 @@ Partial Class Rental
         Me.lblItemName.TabIndex = 22
         Me.lblItemName.Text = "Item Name"
         '
-        'Label9
+        'lblActualQty
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(94, 61)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(38, 45)
-        Me.Label9.TabIndex = 23
-        Me.Label9.Text = "0"
+        Me.lblActualQty.AutoSize = True
+        Me.lblActualQty.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblActualQty.Location = New System.Drawing.Point(94, 61)
+        Me.lblActualQty.Name = "lblActualQty"
+        Me.lblActualQty.Size = New System.Drawing.Size(38, 45)
+        Me.lblActualQty.TabIndex = 23
+        Me.lblActualQty.Text = "0"
         '
         'Label10
         '
@@ -635,6 +637,8 @@ Partial Class Rental
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.Label18)
+        Me.GroupBox1.Controls.Add(Me.txtdelcost)
         Me.GroupBox1.Controls.Add(Me.dpDelDate)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.Label17)
@@ -650,7 +654,7 @@ Partial Class Rental
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(879, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(254, 397)
+        Me.GroupBox1.Size = New System.Drawing.Size(254, 410)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total"
@@ -674,7 +678,7 @@ Partial Class Rental
         Me.dpDelDate.IconColor = System.Drawing.Color.Gray
         Me.dpDelDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right
         Me.dpDelDate.LeftTextMargin = 5
-        Me.dpDelDate.Location = New System.Drawing.Point(13, 321)
+        Me.dpDelDate.Location = New System.Drawing.Point(10, 317)
         Me.dpDelDate.MinimumSize = New System.Drawing.Size(4, 32)
         Me.dpDelDate.Name = "dpDelDate"
         Me.dpDelDate.Size = New System.Drawing.Size(220, 32)
@@ -845,6 +849,25 @@ Partial Class Rental
         Me.txtCashPaid.Size = New System.Drawing.Size(227, 27)
         Me.txtCashPaid.TabIndex = 40
         '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(10, 353)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(114, 17)
+        Me.Label18.TabIndex = 41
+        Me.Label18.Text = "Cost Of Delivery:"
+        '
+        'txtdelcost
+        '
+        Me.txtdelcost.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.txtdelcost.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdelcost.Location = New System.Drawing.Point(11, 373)
+        Me.txtdelcost.Name = "txtdelcost"
+        Me.txtdelcost.Size = New System.Drawing.Size(227, 27)
+        Me.txtdelcost.TabIndex = 40
+        '
         'Rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -856,7 +879,7 @@ Partial Class Rental
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.ckPrint)
         Me.Controls.Add(Me.lblinvoice)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblActualQty)
         Me.Controls.Add(Me.BunifuThinButton22)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtSize)
@@ -901,7 +924,7 @@ Partial Class Rental
     Friend WithEvents txtSize As TextBox
     Friend WithEvents BunifuThinButton22 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents lblItemName As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents lblActualQty As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents txtContact As TextBox
@@ -931,4 +954,6 @@ Partial Class Rental
     Friend WithEvents dpDelDate As Bunifu.UI.WinForms.BunifuDatePicker
     Friend WithEvents Label17 As Label
     Friend WithEvents txtCashPaid As TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents txtdelcost As TextBox
 End Class

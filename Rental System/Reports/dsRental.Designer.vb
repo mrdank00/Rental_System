@@ -1485,6 +1485,8 @@ Partial Public Class dsRental
         
         Private columnCashDeposited As Global.System.Data.DataColumn
         
+        Private columnDeliveryCost As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1689,6 +1691,14 @@ Partial Public Class dsRental
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DeliveryCostColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDeliveryCost
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1745,9 +1755,10 @@ Partial Public Class dsRental
                     ByVal RecievedStamp As Date,  _
                     ByVal DeliveryLocation As String,  _
                     ByVal DeliveryDate As Date,  _
-                    ByVal CashDeposited As Double) As RentalTranxRow
+                    ByVal CashDeposited As Double,  _
+                    ByVal DeliveryCost As Double) As RentalTranxRow
             Dim rowRentalTranxRow As RentalTranxRow = CType(Me.NewRow,RentalTranxRow)
-            Dim columnValuesArray() As Object = New Object() {InvoiceNo, CustomerName, Tel, Location, Itemname, Qty, Price, Amount, Category, Size, Colour, Total, Nothing, QtyReturned, QtyMissing, AmountMissing, RentedStamp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited}
+            Dim columnValuesArray() As Object = New Object() {InvoiceNo, CustomerName, Tel, Location, Itemname, Qty, Price, Amount, Category, Size, Colour, Total, Nothing, QtyReturned, QtyMissing, AmountMissing, RentedStamp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited, DeliveryCost}
             rowRentalTranxRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRentalTranxRow)
             Return rowRentalTranxRow
@@ -1797,6 +1808,7 @@ Partial Public Class dsRental
             Me.columnDeliveryLocation = MyBase.Columns("DeliveryLocation")
             Me.columnDeliveryDate = MyBase.Columns("DeliveryDate")
             Me.columnCashDeposited = MyBase.Columns("CashDeposited")
+            Me.columnDeliveryCost = MyBase.Columns("DeliveryCost")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1844,6 +1856,8 @@ Partial Public Class dsRental
             MyBase.Columns.Add(Me.columnDeliveryDate)
             Me.columnCashDeposited = New Global.System.Data.DataColumn("CashDeposited", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCashDeposited)
+            Me.columnDeliveryCost = New Global.System.Data.DataColumn("DeliveryCost", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDeliveryCost)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnInvoiceNo.AllowDBNull = false
             Me.columnCustomerName.MaxLength = 50
@@ -2907,6 +2921,21 @@ Partial Public Class dsRental
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DeliveryCost() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableRentalTranx.DeliveryCostColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DeliveryCost' in table 'RentalTranx' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRentalTranx.DeliveryCostColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsCustomerNameNull() As Boolean
             Return Me.IsNull(Me.tableRentalTranx.CustomerNameColumn)
         End Function
@@ -3131,6 +3160,18 @@ Partial Public Class dsRental
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetCashDepositedNull()
             Me(Me.tableRentalTranx.CashDepositedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsDeliveryCostNull() As Boolean
+            Return Me.IsNull(Me.tableRentalTranx.DeliveryCostColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetDeliveryCostNull()
+            Me(Me.tableRentalTranx.DeliveryCostColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4982,6 +5023,7 @@ Namespace dsRentalTableAdapters
             tableMapping.ColumnMappings.Add("DeliveryLocation", "DeliveryLocation")
             tableMapping.ColumnMappings.Add("DeliveryDate", "DeliveryDate")
             tableMapping.ColumnMappings.Add("CashDeposited", "CashDeposited")
+            tableMapping.ColumnMappings.Add("DeliveryCost", "DeliveryCost")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -5008,7 +5050,8 @@ Namespace dsRentalTableAdapters
                 "tion] = @Original_DeliveryLocation)) AND ((@IsNull_DeliveryDate = 1 AND [Deliver"& _ 
                 "yDate] IS NULL) OR ([DeliveryDate] = @Original_DeliveryDate)) AND ((@IsNull_Cash"& _ 
                 "Deposited = 1 AND [CashDeposited] IS NULL) OR ([CashDeposited] = @Original_CashD"& _ 
-                "eposited)))"
+                "eposited)) AND ((@IsNull_DeliveryCost = 1 AND [DeliveryCost] IS NULL) OR ([Deliv"& _ 
+                "eryCost] = @Original_DeliveryCost)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InvoiceNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InvoiceNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustomerName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -5050,19 +5093,21 @@ Namespace dsRentalTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DeliveryDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CashDeposited", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CashDeposited", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CashDeposited", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CashDeposited", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DeliveryCost", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryCost", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DeliveryCost", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryCost", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[RentalTranx] ([InvoiceNo], [CustomerName], [Tel], [Location], "& _ 
                 "[Itemname], [Qty], [Price], [Amount], [Category], [Size], [Colour], [Total], [Qt"& _ 
                 "yReturned], [QtyMissing], [AmountMissing], [RentedStamp], [RecievedStamp], [Deli"& _ 
-                "veryLocation], [DeliveryDate], [CashDeposited]) VALUES (@InvoiceNo, @CustomerNam"& _ 
-                "e, @Tel, @Location, @Itemname, @Qty, @Price, @Amount, @Category, @Size, @Colour,"& _ 
-                " @Total, @QtyReturned, @QtyMissing, @AmountMissing, @RentedStamp, @RecievedStamp"& _ 
-                ", @DeliveryLocation, @DeliveryDate, @CashDeposited);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InvoiceNo, Customer"& _ 
-                "Name, Tel, Location, Itemname, Qty, Price, Amount, Category, Size, Colour, Total"& _ 
-                ", Id, QtyReturned, QtyMissing, AmountMissing, RentedStamp, RecievedStamp, Delive"& _ 
-                "ryLocation, DeliveryDate, CashDeposited FROM RentalTranx WHERE (Id = SCOPE_IDENT"& _ 
-                "ITY())"
+                "veryLocation], [DeliveryDate], [CashDeposited], [DeliveryCost]) VALUES (@Invoice"& _ 
+                "No, @CustomerName, @Tel, @Location, @Itemname, @Qty, @Price, @Amount, @Category,"& _ 
+                " @Size, @Colour, @Total, @QtyReturned, @QtyMissing, @AmountMissing, @RentedStamp"& _ 
+                ", @RecievedStamp, @DeliveryLocation, @DeliveryDate, @CashDeposited, @DeliveryCos"& _ 
+                "t);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InvoiceNo, CustomerName, Tel, Location, Itemname, Qty, Price, Amount"& _ 
+                ", Category, Size, Colour, Total, Id, QtyReturned, QtyMissing, AmountMissing, Ren"& _ 
+                "tedStamp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited, Delivery"& _ 
+                "Cost FROM RentalTranx WHERE (Id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InvoiceNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InvoiceNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5084,6 +5129,7 @@ Namespace dsRentalTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DeliveryLocation", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryLocation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DeliveryDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CashDeposited", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CashDeposited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DeliveryCost", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryCost", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[RentalTranx] SET [InvoiceNo] = @InvoiceNo, [CustomerName] = @Custom"& _ 
@@ -5092,33 +5138,35 @@ Namespace dsRentalTableAdapters
                 ", [Colour] = @Colour, [Total] = @Total, [QtyReturned] = @QtyReturned, [QtyMissin"& _ 
                 "g] = @QtyMissing, [AmountMissing] = @AmountMissing, [RentedStamp] = @RentedStamp"& _ 
                 ", [RecievedStamp] = @RecievedStamp, [DeliveryLocation] = @DeliveryLocation, [Del"& _ 
-                "iveryDate] = @DeliveryDate, [CashDeposited] = @CashDeposited WHERE (([InvoiceNo]"& _ 
-                " = @Original_InvoiceNo) AND ((@IsNull_CustomerName = 1 AND [CustomerName] IS NUL"& _ 
-                "L) OR ([CustomerName] = @Original_CustomerName)) AND ((@IsNull_Tel = 1 AND [Tel]"& _ 
-                " IS NULL) OR ([Tel] = @Original_Tel)) AND ((@IsNull_Location = 1 AND [Location] "& _ 
-                "IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Itemname = 1 AND [I"& _ 
-                "temname] IS NULL) OR ([Itemname] = @Original_Itemname)) AND ((@IsNull_Qty = 1 AN"& _ 
-                "D [Qty] IS NULL) OR ([Qty] = @Original_Qty)) AND ((@IsNull_Price = 1 AND [Price]"& _ 
-                " IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Amount = 1 AND [Amount] "& _ 
-                "IS NULL) OR ([Amount] = @Original_Amount)) AND ((@IsNull_Category = 1 AND [Categ"& _ 
-                "ory] IS NULL) OR ([Category] = @Original_Category)) AND ((@IsNull_Size = 1 AND ["& _ 
-                "Size] IS NULL) OR ([Size] = @Original_Size)) AND ((@IsNull_Colour = 1 AND [Colou"& _ 
-                "r] IS NULL) OR ([Colour] = @Original_Colour)) AND ((@IsNull_Total = 1 AND [Total"& _ 
-                "] IS NULL) OR ([Total] = @Original_Total)) AND ([Id] = @Original_Id) AND ((@IsNu"& _ 
-                "ll_QtyReturned = 1 AND [QtyReturned] IS NULL) OR ([QtyReturned] = @Original_QtyR"& _ 
-                "eturned)) AND ((@IsNull_QtyMissing = 1 AND [QtyMissing] IS NULL) OR ([QtyMissing"& _ 
-                "] = @Original_QtyMissing)) AND ((@IsNull_AmountMissing = 1 AND [AmountMissing] I"& _ 
-                "S NULL) OR ([AmountMissing] = @Original_AmountMissing)) AND ((@IsNull_RentedStam"& _ 
-                "p = 1 AND [RentedStamp] IS NULL) OR ([RentedStamp] = @Original_RentedStamp)) AND"& _ 
-                " ((@IsNull_RecievedStamp = 1 AND [RecievedStamp] IS NULL) OR ([RecievedStamp] = "& _ 
-                "@Original_RecievedStamp)) AND ((@IsNull_DeliveryLocation = 1 AND [DeliveryLocati"& _ 
-                "on] IS NULL) OR ([DeliveryLocation] = @Original_DeliveryLocation)) AND ((@IsNull"& _ 
-                "_DeliveryDate = 1 AND [DeliveryDate] IS NULL) OR ([DeliveryDate] = @Original_Del"& _ 
-                "iveryDate)) AND ((@IsNull_CashDeposited = 1 AND [CashDeposited] IS NULL) OR ([Ca"& _ 
-                "shDeposited] = @Original_CashDeposited)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InvoiceNo, CustomerName, Tel,"& _ 
-                " Location, Itemname, Qty, Price, Amount, Category, Size, Colour, Total, Id, QtyR"& _ 
-                "eturned, QtyMissing, AmountMissing, RentedStamp, RecievedStamp, DeliveryLocation"& _ 
-                ", DeliveryDate, CashDeposited FROM RentalTranx WHERE (Id = @Id)"
+                "iveryDate] = @DeliveryDate, [CashDeposited] = @CashDeposited, [DeliveryCost] = @"& _ 
+                "DeliveryCost WHERE (([InvoiceNo] = @Original_InvoiceNo) AND ((@IsNull_CustomerNa"& _ 
+                "me = 1 AND [CustomerName] IS NULL) OR ([CustomerName] = @Original_CustomerName))"& _ 
+                " AND ((@IsNull_Tel = 1 AND [Tel] IS NULL) OR ([Tel] = @Original_Tel)) AND ((@IsN"& _ 
+                "ull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location)) A"& _ 
+                "ND ((@IsNull_Itemname = 1 AND [Itemname] IS NULL) OR ([Itemname] = @Original_Ite"& _ 
+                "mname)) AND ((@IsNull_Qty = 1 AND [Qty] IS NULL) OR ([Qty] = @Original_Qty)) AND"& _ 
+                " ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND (("& _ 
+                "@IsNull_Amount = 1 AND [Amount] IS NULL) OR ([Amount] = @Original_Amount)) AND ("& _ 
+                "(@IsNull_Category = 1 AND [Category] IS NULL) OR ([Category] = @Original_Categor"& _ 
+                "y)) AND ((@IsNull_Size = 1 AND [Size] IS NULL) OR ([Size] = @Original_Size)) AND"& _ 
+                " ((@IsNull_Colour = 1 AND [Colour] IS NULL) OR ([Colour] = @Original_Colour)) AN"& _ 
+                "D ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ("& _ 
+                "[Id] = @Original_Id) AND ((@IsNull_QtyReturned = 1 AND [QtyReturned] IS NULL) OR"& _ 
+                " ([QtyReturned] = @Original_QtyReturned)) AND ((@IsNull_QtyMissing = 1 AND [QtyM"& _ 
+                "issing] IS NULL) OR ([QtyMissing] = @Original_QtyMissing)) AND ((@IsNull_AmountM"& _ 
+                "issing = 1 AND [AmountMissing] IS NULL) OR ([AmountMissing] = @Original_AmountMi"& _ 
+                "ssing)) AND ((@IsNull_RentedStamp = 1 AND [RentedStamp] IS NULL) OR ([RentedStam"& _ 
+                "p] = @Original_RentedStamp)) AND ((@IsNull_RecievedStamp = 1 AND [RecievedStamp]"& _ 
+                " IS NULL) OR ([RecievedStamp] = @Original_RecievedStamp)) AND ((@IsNull_Delivery"& _ 
+                "Location = 1 AND [DeliveryLocation] IS NULL) OR ([DeliveryLocation] = @Original_"& _ 
+                "DeliveryLocation)) AND ((@IsNull_DeliveryDate = 1 AND [DeliveryDate] IS NULL) OR"& _ 
+                " ([DeliveryDate] = @Original_DeliveryDate)) AND ((@IsNull_CashDeposited = 1 AND "& _ 
+                "[CashDeposited] IS NULL) OR ([CashDeposited] = @Original_CashDeposited)) AND ((@"& _ 
+                "IsNull_DeliveryCost = 1 AND [DeliveryCost] IS NULL) OR ([DeliveryCost] = @Origin"& _ 
+                "al_DeliveryCost)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InvoiceNo, CustomerName, Tel, Location, Itemname, Qt"& _ 
+                "y, Price, Amount, Category, Size, Colour, Total, Id, QtyReturned, QtyMissing, Am"& _ 
+                "ountMissing, RentedStamp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDep"& _ 
+                "osited, DeliveryCost FROM RentalTranx WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InvoiceNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InvoiceNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -5140,6 +5188,7 @@ Namespace dsRentalTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DeliveryLocation", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryLocation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DeliveryDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CashDeposited", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CashDeposited", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DeliveryCost", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryCost", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InvoiceNo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InvoiceNo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustomerName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustomerName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustomerName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -5180,6 +5229,8 @@ Namespace dsRentalTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DeliveryDate", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryDate", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CashDeposited", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CashDeposited", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CashDeposited", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CashDeposited", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DeliveryCost", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryCost", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DeliveryCost", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DeliveryCost", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -5198,8 +5249,8 @@ Namespace dsRentalTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT InvoiceNo, CustomerName, Tel, Location, Itemname, Qty, Price, Amount, Cate"& _ 
                 "gory, Size, Colour, Total, Id, QtyReturned, QtyMissing, AmountMissing, RentedSta"& _ 
-                "mp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited FROM dbo.Rental"& _ 
-                "Tranx"
+                "mp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited, DeliveryCost F"& _ 
+                "ROM dbo.RentalTranx"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -5280,7 +5331,8 @@ Namespace dsRentalTableAdapters
                     ByVal Original_RecievedStamp As Global.System.Nullable(Of Date),  _
                     ByVal Original_DeliveryLocation As String,  _
                     ByVal Original_DeliveryDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_CashDeposited As Global.System.Nullable(Of Double)) As Integer
+                    ByVal Original_CashDeposited As Global.System.Nullable(Of Double),  _
+                    ByVal Original_DeliveryCost As Global.System.Nullable(Of Double)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_InvoiceNo,Integer)
             If (Original_CustomerName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -5416,6 +5468,13 @@ Namespace dsRentalTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(38).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
+            If (Original_DeliveryCost.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(Original_DeliveryCost.Value,Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(41).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5455,7 +5514,8 @@ Namespace dsRentalTableAdapters
                     ByVal RecievedStamp As Global.System.Nullable(Of Date),  _
                     ByVal DeliveryLocation As String,  _
                     ByVal DeliveryDate As Global.System.Nullable(Of Date),  _
-                    ByVal CashDeposited As Global.System.Nullable(Of Double)) As Integer
+                    ByVal CashDeposited As Global.System.Nullable(Of Double),  _
+                    ByVal DeliveryCost As Global.System.Nullable(Of Double)) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(InvoiceNo,Integer)
             If (CustomerName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -5552,6 +5612,11 @@ Namespace dsRentalTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
+            If (DeliveryCost.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(20).Value = CType(DeliveryCost.Value,Double)
+            Else
+                Me.Adapter.InsertCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5592,6 +5657,7 @@ Namespace dsRentalTableAdapters
                     ByVal DeliveryLocation As String,  _
                     ByVal DeliveryDate As Global.System.Nullable(Of Date),  _
                     ByVal CashDeposited As Global.System.Nullable(Of Double),  _
+                    ByVal DeliveryCost As Global.System.Nullable(Of Double),  _
                     ByVal Original_InvoiceNo As Integer,  _
                     ByVal Original_CustomerName As String,  _
                     ByVal Original_Tel As String,  _
@@ -5613,6 +5679,7 @@ Namespace dsRentalTableAdapters
                     ByVal Original_DeliveryLocation As String,  _
                     ByVal Original_DeliveryDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_CashDeposited As Global.System.Nullable(Of Double),  _
+                    ByVal Original_DeliveryCost As Global.System.Nullable(Of Double),  _
                     ByVal Id As Integer) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(InvoiceNo,Integer)
             If (CustomerName Is Nothing) Then
@@ -5710,142 +5777,154 @@ Namespace dsRentalTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_InvoiceNo,Integer)
-            If (Original_CustomerName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            If (DeliveryCost.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(DeliveryCost.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_CustomerName,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_InvoiceNo,Integer)
+            If (Original_CustomerName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_CustomerName,String)
             End If
             If (Original_Tel Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Tel,String)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Tel,String)
             End If
             If (Original_Location Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Location,String)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Location,String)
             End If
             If (Original_Itemname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_Itemname,String)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_Itemname,String)
             End If
             If (Original_Qty.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_Qty.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_Qty.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             End If
             If (Original_Price.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_Price.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_Price.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
             If (Original_Amount.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_Amount.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_Amount.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             End If
             If (Original_Category Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_Category,String)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_Category,String)
             End If
             If (Original_Size Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_Size,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_Size,String)
             End If
             If (Original_Colour Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_Colour,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_Colour,String)
             End If
             If (Original_Total.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_Total.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_Total.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_Id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_Id,Integer)
             If (Original_QtyReturned.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_QtyReturned.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_QtyReturned.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
             End If
             If (Original_QtyMissing.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_QtyMissing.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_QtyMissing.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
             End If
             If (Original_AmountMissing.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_AmountMissing.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_AmountMissing.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
             End If
             If (Original_RentedStamp.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_RentedStamp.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_RentedStamp.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
             End If
             If (Original_RecievedStamp.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_RecievedStamp.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(Original_RecievedStamp.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
             End If
             If (Original_DeliveryLocation Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_DeliveryLocation,String)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_DeliveryLocation,String)
             End If
             If (Original_DeliveryDate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_DeliveryDate.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_DeliveryDate.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
             End If
             If (Original_CashDeposited.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_CashDeposited.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_CashDeposited.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Id,Integer)
+            If (Original_DeliveryCost.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_DeliveryCost.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5886,6 +5965,7 @@ Namespace dsRentalTableAdapters
                     ByVal DeliveryLocation As String,  _
                     ByVal DeliveryDate As Global.System.Nullable(Of Date),  _
                     ByVal CashDeposited As Global.System.Nullable(Of Double),  _
+                    ByVal DeliveryCost As Global.System.Nullable(Of Double),  _
                     ByVal Original_InvoiceNo As Integer,  _
                     ByVal Original_CustomerName As String,  _
                     ByVal Original_Tel As String,  _
@@ -5906,8 +5986,9 @@ Namespace dsRentalTableAdapters
                     ByVal Original_RecievedStamp As Global.System.Nullable(Of Date),  _
                     ByVal Original_DeliveryLocation As String,  _
                     ByVal Original_DeliveryDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_CashDeposited As Global.System.Nullable(Of Double)) As Integer
-            Return Me.Update(InvoiceNo, CustomerName, Tel, Location, Itemname, Qty, Price, Amount, Category, Size, Colour, Total, QtyReturned, QtyMissing, AmountMissing, RentedStamp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited, Original_InvoiceNo, Original_CustomerName, Original_Tel, Original_Location, Original_Itemname, Original_Qty, Original_Price, Original_Amount, Original_Category, Original_Size, Original_Colour, Original_Total, Original_Id, Original_QtyReturned, Original_QtyMissing, Original_AmountMissing, Original_RentedStamp, Original_RecievedStamp, Original_DeliveryLocation, Original_DeliveryDate, Original_CashDeposited, Original_Id)
+                    ByVal Original_CashDeposited As Global.System.Nullable(Of Double),  _
+                    ByVal Original_DeliveryCost As Global.System.Nullable(Of Double)) As Integer
+            Return Me.Update(InvoiceNo, CustomerName, Tel, Location, Itemname, Qty, Price, Amount, Category, Size, Colour, Total, QtyReturned, QtyMissing, AmountMissing, RentedStamp, RecievedStamp, DeliveryLocation, DeliveryDate, CashDeposited, DeliveryCost, Original_InvoiceNo, Original_CustomerName, Original_Tel, Original_Location, Original_Itemname, Original_Qty, Original_Price, Original_Amount, Original_Category, Original_Size, Original_Colour, Original_Total, Original_Id, Original_QtyReturned, Original_QtyMissing, Original_AmountMissing, Original_RentedStamp, Original_RecievedStamp, Original_DeliveryLocation, Original_DeliveryDate, Original_CashDeposited, Original_DeliveryCost, Original_Id)
         End Function
     End Class
     
