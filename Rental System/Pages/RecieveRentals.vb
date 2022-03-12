@@ -165,13 +165,18 @@ Public Class RecieveRentals
     End Sub
     Public Sub Clear()
         For Each control As Control In Me.Controls
-            If TypeOf control Is TextBox Then
-                control.Text = ""
-            End If
-            If TypeOf control Is ComboBox Then
-                control.Text = ""
-            End If
+            'If TypeOf control Is TextBox Then
+            '    control.Text = ""
+            'End If
+            'If TypeOf control Is ComboBox Then
+            '    control.Text = ""
+            'End If
         Next
+        txtMissing.Text = ""
+        txtQty.Text = ""
+        txtPrice.Text = ""
+        txtRetuned.Text = ""
+        txtAmt.Text = ""
     End Sub
 
     Private Sub cbCustname_MouseClick(sender As Object, e As MouseEventArgs) Handles cbCustname.MouseClick
