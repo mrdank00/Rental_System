@@ -20,7 +20,8 @@ Public Class Rental
             txtCat.Text = row.Cells(4).Value.ToString()
             txtColour.Text = row.Cells(5).Value.ToString()
             txtSize.Text = row.Cells(6).Value.ToString()
-            lblactualqty.text = row.Cells(3).Value.ToString()
+            lblActualQty.Text = row.Cells(3).Value.ToString()
+            lblItemCost.Text = row.Cells(7).Value.ToString()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -38,7 +39,7 @@ Public Class Rental
                 Exit Sub
             End If
         Next
-        gvRentals.Rows.Add(lblItemName.Text, txtPrice.Text, txtQty.Text, txtAmt.Text, txtCat.Text, txtColour.Text, txtSize.Text)
+        gvRentals.Rows.Add(lblItemName.Text, txtPrice.Text, txtQty.Text, txtAmt.Text, txtCat.Text, txtColour.Text, txtSize.Text, lblItemCost.Text)
         For Each control As Control In Me.BunifuGroupBox1.Controls
             If TypeOf control Is TextBox Then
                 control.Text = ""
@@ -88,7 +89,7 @@ Public Class Rental
             Invoiceno()
 
             For Each row As DataGridViewRow In gvRentals.Rows
-                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,Deliverylocation,DeliveryDate,cashdeposited,DeliveryCost,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + txtDelLocation.Text + "','" + dpDelDate.Text + "','" + txtCashPaid.Text + "','" + txtdelcost.Text + "',convert(datetime,'" + DateTime.Now + "',105))")
+                Insert("insert into rentaltranx(invoiceno,Customername,tel,location,itemname,qty,price,amount,category,size,colour,Deliverylocation,DeliveryDate,cashdeposited,DeliveryCost,Itemcost,rentedstamp) values('" + lblinvoice.Text + "','" + cbCustname.Text + "','" + txtContact.Text + "','" + txtLocation.Text + "','" + row.Cells(0).Value + "','" + row.Cells(2).Value + "','" + row.Cells(1).Value + "','" + row.Cells(3).Value + "','" + row.Cells(4).Value + "','" + row.Cells(6).Value + "','" + row.Cells(5).Value + "','" + txtDelLocation.Text + "','" + dpDelDate.Text + "','" + txtCashPaid.Text + "','" + txtdelcost.Text + "','" + row.Cells(7).Value + "',convert(datetime,'" + DateTime.Now + "',105))")
             Next
 
             For k = 0 To gvRentals.RowCount - 1
@@ -104,11 +105,21 @@ Public Class Rental
                     cmd.ExecuteNonQuery()
                 End While
             Next
-            Rentalinvoice()
-            Display()
+            If RentCon.State = ConnectionState.Closed Then
+                RentCon.Open()
+            End If
+            cmd = New SqlCommand("Select customerbalance from customers where name='" + cbCustname.Text + "'", RentCon)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cmd = New SqlCommand("update customers set customerbalance = '" & dr.Item("customerbalance") + Val(lblTotal.Text) + Val(txtdelcost.Text) - Val(txtCashPaid.Text) & "' where name= '" & cbCustname.Text & "'", RentCon)
+                cmd.ExecuteNonQuery()
+            End While
+            RentCon.Close()
             Clear()
             gvRentals.Rows.Clear()
+            Display()
             BunifuSnackbar1.Show(Me.FindForm, "Success")
+            Rentalinvoice()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -122,11 +133,11 @@ Public Class Rental
         da.SelectCommand = cmd
         da.Fill(dt, "RentalTranx")
 
-        'Dim sql = "select * from ClientReg"
-        'dt.Tables("ClientReg").Rows.Clear()
-        'cmd = New SqlCommand(sql, FleetCon)
-        'da.SelectCommand = cmd
-        'da.Fill(dt, "ClientReg")
+        Dim sql = "select * from ClientReg"
+        dt.Tables("ClientReg").Rows.Clear()
+        cmd = New SqlCommand(sql, RentCon)
+        da.SelectCommand = cmd
+        da.Fill(dt, "ClientReg")
 
         Dim report As New rptRentedInvoice
         report.SetDataSource(dt)
@@ -159,7 +170,7 @@ Public Class Rental
         RentCon.Close()
     End Sub
     Public Sub Clear()
-        For Each control As Control In Me.Controls
+        For Each control As Control In Me.GroupBox1.Controls
             If TypeOf control Is TextBox Then
                 control.Text = ""
             End If
@@ -221,11 +232,5 @@ Public Class Rental
         Invoiceno()
     End Sub
 
-    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
 
-    End Sub
-
-    Private Sub Label18_Click(sender As Object, e As EventArgs) Handles Label18.Click
-
-    End Sub
 End Class

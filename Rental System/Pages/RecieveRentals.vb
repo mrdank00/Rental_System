@@ -30,7 +30,7 @@ Public Class RecieveRentals
             txtContact.Text = tbl.Rows(0)(2).ToString
             txtLocation.Text = tbl.Rows(0)(3).ToString
             For k = 0 To tbl.Rows.Count - 1
-                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(6).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(13).ToString, tbl.Rows(k)(14).ToString, 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString)
+                gvRentals.Rows.Add(tbl.Rows(k)(4).ToString, tbl.Rows(k)(22).ToString, tbl.Rows(k)(5).ToString, tbl.Rows(k)(13).ToString, tbl.Rows(k)(14).ToString, 0, tbl.Rows(k)(8).ToString, tbl.Rows(k)(10).ToString, tbl.Rows(k)(9).ToString, tbl.Rows(k)(6).ToString)
             Next
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -125,6 +125,16 @@ Public Class RecieveRentals
                 End While
             Next
             Insert("update RentalConfig set status='" + "Returned" + "' where invoiceno='" + lblinvoice.Text + "'")
+            If RentCon.State = ConnectionState.Closed Then
+                RentCon.Open()
+            End If
+            cmd = New SqlCommand("Select customerbalance from customers where name='" + cbCustname.Text + "'", RentCon)
+            dr = cmd.ExecuteReader
+            While dr.Read
+                cmd = New SqlCommand("update customers set customerbalance = '" & dr.Item("customerbalance") + Val(lblTotal.Text) & "' where name= '" & cbCustname.Text & "'", RentCon)
+                cmd.ExecuteNonQuery()
+            End While
+            RentCon.Close()
             Rentalreturninvoice()
             Display()
             gvRentals.Rows.Clear()
@@ -142,11 +152,11 @@ Public Class RecieveRentals
         da.SelectCommand = cmd
         da.Fill(dt, "RentalTranx")
 
-        'Dim sql = "select * from ClientReg"
-        'dt.Tables("ClientReg").Rows.Clear()
-        'cmd = New SqlCommand(sql, FleetCon)
-        'da.SelectCommand = cmd
-        'da.Fill(dt, "ClientReg")
+        Dim sql = "select * from ClientReg"
+        dt.Tables("ClientReg").Rows.Clear()
+        cmd = New SqlCommand(sql, RentCon)
+        da.SelectCommand = cmd
+        da.Fill(dt, "ClientReg")
 
         Dim report As New rptRentalRecieveInvoice
         report.SetDataSource(dt)

@@ -69,6 +69,9 @@ Partial Class Rental
         Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
         Me.BunifuGroupBox1 = New Bunifu.UI.WinForms.BunifuGroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCashPaid = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtdelcost = New System.Windows.Forms.TextBox()
         Me.dpDelDate = New Bunifu.UI.WinForms.BunifuDatePicker()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -77,9 +80,8 @@ Partial Class Rental
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.ckPreview = New Bunifu.UI.WinForms.BunifuCheckBox()
-        Me.txtCashPaid = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.txtdelcost = New System.Windows.Forms.TextBox()
+        Me.ItemCost = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblItemCost = New System.Windows.Forms.Label()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,7 +177,7 @@ Partial Class Rental
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.gvRentals.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.gvRentals.ColumnHeadersHeight = 40
-        Me.gvRentals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Category, Me.Column4, Me.Column5})
+        Me.gvRentals.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Category, Me.Column4, Me.Column5, Me.ItemCost})
         Me.gvRentals.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.gvRentals.CurrentTheme.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.gvRentals.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black
@@ -443,7 +445,7 @@ Partial Class Rental
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(7, 124)
+        Me.Label10.Location = New System.Drawing.Point(7, 86)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(48, 17)
         Me.Label10.TabIndex = 25
@@ -453,7 +455,7 @@ Partial Class Rental
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 162)
+        Me.Label11.Location = New System.Drawing.Point(6, 124)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(59, 17)
         Me.Label11.TabIndex = 27
@@ -463,7 +465,7 @@ Partial Class Rental
         '
         Me.txtContact.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.txtContact.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContact.Location = New System.Drawing.Point(65, 159)
+        Me.txtContact.Location = New System.Drawing.Point(65, 121)
         Me.txtContact.Name = "txtContact"
         Me.txtContact.ReadOnly = True
         Me.txtContact.Size = New System.Drawing.Size(172, 27)
@@ -473,7 +475,7 @@ Partial Class Rental
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(0, 201)
+        Me.Label12.Location = New System.Drawing.Point(0, 163)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(65, 17)
         Me.Label12.TabIndex = 29
@@ -483,7 +485,7 @@ Partial Class Rental
         '
         Me.txtLocation.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.txtLocation.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLocation.Location = New System.Drawing.Point(65, 195)
+        Me.txtLocation.Location = New System.Drawing.Point(65, 157)
         Me.txtLocation.Name = "txtLocation"
         Me.txtLocation.ReadOnly = True
         Me.txtLocation.Size = New System.Drawing.Size(172, 27)
@@ -493,7 +495,7 @@ Partial Class Rental
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Segoe UI", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(56, 60)
+        Me.lblTotal.Location = New System.Drawing.Point(56, 22)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(43, 50)
         Me.lblTotal.TabIndex = 30
@@ -503,7 +505,7 @@ Partial Class Rental
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(12, 60)
+        Me.Label14.Location = New System.Drawing.Point(12, 22)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(43, 17)
         Me.Label14.TabIndex = 31
@@ -513,18 +515,18 @@ Partial Class Rental
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(885, 441)
+        Me.Label15.Location = New System.Drawing.Point(3, 403)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(72, 17)
+        Me.Label15.Size = New System.Drawing.Size(108, 17)
         Me.Label15.TabIndex = 33
-        Me.Label15.Text = "Cash Paid:"
+        Me.Label15.Text = "Cash Deposited:"
         '
         'cbCustname
         '
         Me.cbCustname.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.cbCustname.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCustname.FormattingEnabled = True
-        Me.cbCustname.Location = New System.Drawing.Point(65, 124)
+        Me.cbCustname.Location = New System.Drawing.Point(65, 86)
         Me.cbCustname.Name = "cbCustname"
         Me.cbCustname.Size = New System.Drawing.Size(172, 29)
         Me.cbCustname.TabIndex = 34
@@ -637,9 +639,11 @@ Partial Class Rental
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.txtCashPaid)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.txtdelcost)
         Me.GroupBox1.Controls.Add(Me.dpDelDate)
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.txtDelLocation)
@@ -654,10 +658,38 @@ Partial Class Rental
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(879, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(254, 410)
+        Me.GroupBox1.Size = New System.Drawing.Size(254, 467)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Total"
+        '
+        'txtCashPaid
+        '
+        Me.txtCashPaid.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.txtCashPaid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCashPaid.Location = New System.Drawing.Point(6, 423)
+        Me.txtCashPaid.Name = "txtCashPaid"
+        Me.txtCashPaid.Size = New System.Drawing.Size(227, 27)
+        Me.txtCashPaid.TabIndex = 40
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(5, 353)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(114, 17)
+        Me.Label18.TabIndex = 41
+        Me.Label18.Text = "Cost Of Delivery:"
+        '
+        'txtdelcost
+        '
+        Me.txtdelcost.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.txtdelcost.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdelcost.Location = New System.Drawing.Point(6, 373)
+        Me.txtdelcost.Name = "txtdelcost"
+        Me.txtdelcost.Size = New System.Drawing.Size(227, 27)
+        Me.txtdelcost.TabIndex = 40
         '
         'dpDelDate
         '
@@ -678,7 +710,7 @@ Partial Class Rental
         Me.dpDelDate.IconColor = System.Drawing.Color.Gray
         Me.dpDelDate.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right
         Me.dpDelDate.LeftTextMargin = 5
-        Me.dpDelDate.Location = New System.Drawing.Point(10, 317)
+        Me.dpDelDate.Location = New System.Drawing.Point(9, 306)
         Me.dpDelDate.MinimumSize = New System.Drawing.Size(4, 32)
         Me.dpDelDate.Name = "dpDelDate"
         Me.dpDelDate.Size = New System.Drawing.Size(220, 32)
@@ -689,7 +721,7 @@ Partial Class Rental
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(6, 245)
+        Me.Label16.Location = New System.Drawing.Point(3, 225)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(121, 17)
         Me.Label16.TabIndex = 36
@@ -699,7 +731,7 @@ Partial Class Rental
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(6, 298)
+        Me.Label17.Location = New System.Drawing.Point(5, 287)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(97, 17)
         Me.Label17.TabIndex = 38
@@ -709,7 +741,7 @@ Partial Class Rental
         '
         Me.txtDelLocation.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.txtDelLocation.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDelLocation.Location = New System.Drawing.Point(10, 265)
+        Me.txtDelLocation.Location = New System.Drawing.Point(7, 245)
         Me.txtDelLocation.Name = "txtDelLocation"
         Me.txtDelLocation.Size = New System.Drawing.Size(227, 27)
         Me.txtDelLocation.TabIndex = 35
@@ -840,43 +872,30 @@ Partial Class Rental
         Me.ckPreview.ThreeState = False
         Me.ckPreview.ToolTipText = Nothing
         '
-        'txtCashPaid
+        'ItemCost
         '
-        Me.txtCashPaid.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.txtCashPaid.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCashPaid.Location = New System.Drawing.Point(892, 461)
-        Me.txtCashPaid.Name = "txtCashPaid"
-        Me.txtCashPaid.Size = New System.Drawing.Size(227, 27)
-        Me.txtCashPaid.TabIndex = 40
+        Me.ItemCost.HeaderText = "ItemCost"
+        Me.ItemCost.Name = "ItemCost"
+        Me.ItemCost.ReadOnly = True
         '
-        'Label18
+        'lblItemCost
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(10, 353)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(114, 17)
-        Me.Label18.TabIndex = 41
-        Me.Label18.Text = "Cost Of Delivery:"
-        '
-        'txtdelcost
-        '
-        Me.txtdelcost.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.txtdelcost.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdelcost.Location = New System.Drawing.Point(11, 373)
-        Me.txtdelcost.Name = "txtdelcost"
-        Me.txtdelcost.Size = New System.Drawing.Size(227, 27)
-        Me.txtdelcost.TabIndex = 40
+        Me.lblItemCost.AutoSize = True
+        Me.lblItemCost.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblItemCost.Location = New System.Drawing.Point(287, 8)
+        Me.lblItemCost.Name = "lblItemCost"
+        Me.lblItemCost.Size = New System.Drawing.Size(27, 13)
+        Me.lblItemCost.TabIndex = 43
+        Me.lblItemCost.Text = "Size"
         '
         'Rental
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.txtCashPaid)
+        Me.Controls.Add(Me.lblItemCost)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.ckPreview)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.ckPrint)
         Me.Controls.Add(Me.lblinvoice)
         Me.Controls.Add(Me.lblActualQty)
@@ -956,4 +975,6 @@ Partial Class Rental
     Friend WithEvents txtCashPaid As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents txtdelcost As TextBox
+    Friend WithEvents ItemCost As DataGridViewTextBoxColumn
+    Friend WithEvents lblItemCost As Label
 End Class

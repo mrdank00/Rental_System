@@ -31,4 +31,11 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         trailtime = DateTime.Now
     End Sub
+
+    Private Sub BunifuButton26_Click(sender As Object, e As EventArgs) Handles BunifuButton26.Click
+        BunifuPages1.SetPage("Setup")
+        lblHeader.Text = "Rental Returns"
+    End Sub
+
+
 End Class

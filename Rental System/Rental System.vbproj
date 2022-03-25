@@ -340,6 +340,12 @@
       <DependentUpon>rptRentalsperDate.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Pages\Setup.Designer.vb">
+      <DependentUpon>Setup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Setup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="RentalCON.vb" />
     <Compile Include="RentalCRUD.vb" />
     <Compile Include="RentalPreloader.Designer.vb">
@@ -416,6 +422,9 @@
     <EmbeddedResource Include="Pages\rptRentalsperDate.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptRentalsperDate.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Setup.resx">
+      <DependentUpon>Setup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RentalPreloader.resx">
       <DependentUpon>RentalPreloader.vb</DependentUpon>

@@ -1,8 +1,56 @@
 ﻿
 Imports System.Data.SqlClient
 Public Class Product
-    Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
+    Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs)
 
+
+    End Sub
+    Public Sub Clear()
+        For Each control As Control In Me.TabPage1.Controls
+            If TypeOf control Is TextBox Then
+                control.Text = ""
+            End If
+            If TypeOf control Is ComboBox Then
+                control.Text = ""
+            End If
+        Next
+    End Sub
+    Public Sub Display()
+        Reload("select * from stockMast", BunifuDataGridView1)
+        ComboFeed("select category from combofeed", cbCat, 0)
+        ComboFeed("select size from combofeed", cbSize, 0)
+        ComboFeed("select colour from combofeed", cbcolour, 0)
+    End Sub
+
+    Private Sub Product_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Display()
+    End Sub
+
+    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub BunifuThinButton23_Click(sender As Object, e As EventArgs)
+        If lblId.Text = "-" Then
+            MsgBox("Kindly select item to Delete")
+            Exit Sub
+        End If
+        Insert("delete from Stockmast where itemid='" + lblId.Text + "' and qty=0")
+        Display()
+        Clear()
+        lblId.Text = "-"
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
+    End Sub
+
+    Private Sub Product_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
+        Display()
+    End Sub
+
+    Private Sub BunifuThinButton22_Click_1(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
         cmd = New SqlCommand("select itemname,category,colour,size from Stockmast where itemname='" + txtname.Text + "' and category='" + cbCat.Text + "'", RentCon)
         da = New SqlDataAdapter(cmd)
         tbl = New DataTable
@@ -47,28 +95,8 @@ Public Class Product
         Display()
         BunifuSnackbar1.Show(Me.FindForm, "Success")
     End Sub
-    Public Sub Clear()
-        For Each control As Control In Me.Controls
-            If TypeOf control Is TextBox Then
-                control.Text = ""
-            End If
-            If TypeOf control Is ComboBox Then
-                control.Text = ""
-            End If
-        Next
-    End Sub
-    Public Sub Display()
-        Reload("select * from stockMast", BunifuDataGridView1)
-        ComboFeed("select category from combofeed", cbCat, 0)
-        ComboFeed("select size from combofeed", cbSize, 0)
-        ComboFeed("select colour from combofeed", cbcolour, 0)
-    End Sub
 
-    Private Sub Product_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Display()
-    End Sub
-
-    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles BunifuThinButton21.Click
+    Private Sub BunifuThinButton21_Click_1(sender As Object, e As EventArgs) Handles BunifuThinButton21.Click
         If lblId.Text = "-" Then
             MsgBox("Kindly select item to Update")
             Exit Sub
@@ -80,7 +108,19 @@ Public Class Product
         BunifuSnackbar1.Show(Me.FindForm, "Success")
     End Sub
 
-    Private Sub BunifuDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
+    Private Sub BunifuThinButton23_Click_1(sender As Object, e As EventArgs) Handles BunifuThinButton23.Click
+        If lblId.Text = "-" Then
+            MsgBox("Kindly select item to Delete")
+            Exit Sub
+        End If
+        Insert("delete from Stockmast where itemid='" + lblId.Text + "' and qty=0")
+        Display()
+        Clear()
+        lblId.Text = "-"
+        BunifuSnackbar1.Show(Me.FindForm, "Success")
+    End Sub
+
+    Private Sub BunifuDataGridView1_CellClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles BunifuDataGridView1.CellClick
         Try
             Dim row As DataGridViewRow = BunifuDataGridView1.Rows(e.RowIndex)
             txtqty.Text = row.Cells(3).Value.ToString()
@@ -93,21 +133,5 @@ Public Class Product
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub BunifuThinButton23_Click(sender As Object, e As EventArgs) Handles BunifuThinButton23.Click
-        If lblId.Text = "-" Then
-            MsgBox("Kindly select item to Delete")
-            Exit Sub
-        End If
-        Insert("delete from Stockmast where itemid='" + lblId.Text + "' and qty=0")
-        Display()
-        Clear()
-        lblId.Text = "-"
-        BunifuSnackbar1.Show(Me.FindForm, "Success")
-    End Sub
-
-    Private Sub Product_Enter(sender As Object, e As EventArgs) Handles MyBase.Enter
-        Display()
     End Sub
 End Class
