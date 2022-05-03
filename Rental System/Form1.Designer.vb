@@ -42,16 +42,16 @@ Partial Class Form1
         Me.BunifuButton22 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2()
         Me.BunifuPages1 = New Bunifu.UI.WinForms.BunifuPages()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Product1 = New Rental_System.Product()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Customer1 = New Rental_System.Customer()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Rental1 = New Rental_System.Rental()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.RentalReports1 = New Rental_System.RentalReports()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.RecieveRentals1 = New Rental_System.RecieveRentals()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Setup1 = New Rental_System.Setup()
         Me.Panel2.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +111,7 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.Panel1.Controls.Add(Me.BunifuButton26)
         Me.Panel1.Controls.Add(Me.BunifuButton21)
         Me.Panel1.Controls.Add(Me.BunifuButton25)
@@ -677,10 +678,10 @@ Partial Class Form1
         Me.BunifuPages1.Location = New System.Drawing.Point(0, 0)
         Me.BunifuPages1.Multiline = True
         Me.BunifuPages1.Name = "BunifuPages1"
-        Me.BunifuPages1.Page = Me.TabPage6
-        Me.BunifuPages1.PageIndex = 5
-        Me.BunifuPages1.PageName = "TabPage6"
-        Me.BunifuPages1.PageTitle = "Setup"
+        Me.BunifuPages1.Page = Me.TabPage1
+        Me.BunifuPages1.PageIndex = 0
+        Me.BunifuPages1.PageName = "TabPage1"
+        Me.BunifuPages1.PageTitle = "Products"
         Me.BunifuPages1.SelectedIndex = 0
         Me.BunifuPages1.Size = New System.Drawing.Size(800, 426)
         Me.BunifuPages1.TabIndex = 0
@@ -713,6 +714,14 @@ Partial Class Form1
         Me.TabPage1.Text = "Products"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Product1
+        '
+        Me.Product1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Product1.Location = New System.Drawing.Point(3, 3)
+        Me.Product1.Name = "Product1"
+        Me.Product1.Size = New System.Drawing.Size(786, 394)
+        Me.Product1.TabIndex = 0
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.Customer1)
@@ -723,6 +732,14 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Customers"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Customer1
+        '
+        Me.Customer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Customer1.Location = New System.Drawing.Point(3, 3)
+        Me.Customer1.Name = "Customer1"
+        Me.Customer1.Size = New System.Drawing.Size(786, 394)
+        Me.Customer1.TabIndex = 0
         '
         'TabPage3
         '
@@ -735,6 +752,14 @@ Partial Class Form1
         Me.TabPage3.Text = "Rent"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'Rental1
+        '
+        Me.Rental1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Rental1.Location = New System.Drawing.Point(3, 3)
+        Me.Rental1.Name = "Rental1"
+        Me.Rental1.Size = New System.Drawing.Size(786, 394)
+        Me.Rental1.TabIndex = 0
+        '
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.RentalReports1)
@@ -745,6 +770,14 @@ Partial Class Form1
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Report"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'RentalReports1
+        '
+        Me.RentalReports1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RentalReports1.Location = New System.Drawing.Point(3, 3)
+        Me.RentalReports1.Name = "RentalReports1"
+        Me.RentalReports1.Size = New System.Drawing.Size(786, 394)
+        Me.RentalReports1.TabIndex = 0
         '
         'TabPage5
         '
@@ -757,6 +790,14 @@ Partial Class Form1
         Me.TabPage5.Text = "RentalReturns"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'RecieveRentals1
+        '
+        Me.RecieveRentals1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RecieveRentals1.Location = New System.Drawing.Point(3, 3)
+        Me.RecieveRentals1.Name = "RecieveRentals1"
+        Me.RecieveRentals1.Size = New System.Drawing.Size(786, 394)
+        Me.RecieveRentals1.TabIndex = 0
+        '
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.Setup1)
@@ -767,46 +808,6 @@ Partial Class Form1
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Setup"
         Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'Product1
-        '
-        Me.Product1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Product1.Location = New System.Drawing.Point(3, 3)
-        Me.Product1.Name = "Product1"
-        Me.Product1.Size = New System.Drawing.Size(786, 394)
-        Me.Product1.TabIndex = 0
-        '
-        'Customer1
-        '
-        Me.Customer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Customer1.Location = New System.Drawing.Point(3, 3)
-        Me.Customer1.Name = "Customer1"
-        Me.Customer1.Size = New System.Drawing.Size(786, 394)
-        Me.Customer1.TabIndex = 0
-        '
-        'Rental1
-        '
-        Me.Rental1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Rental1.Location = New System.Drawing.Point(3, 3)
-        Me.Rental1.Name = "Rental1"
-        Me.Rental1.Size = New System.Drawing.Size(786, 394)
-        Me.Rental1.TabIndex = 0
-        '
-        'RentalReports1
-        '
-        Me.RentalReports1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RentalReports1.Location = New System.Drawing.Point(3, 3)
-        Me.RentalReports1.Name = "RentalReports1"
-        Me.RentalReports1.Size = New System.Drawing.Size(786, 394)
-        Me.RentalReports1.TabIndex = 0
-        '
-        'RecieveRentals1
-        '
-        Me.RecieveRentals1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RecieveRentals1.Location = New System.Drawing.Point(3, 3)
-        Me.RecieveRentals1.Name = "RecieveRentals1"
-        Me.RecieveRentals1.Size = New System.Drawing.Size(786, 394)
-        Me.RecieveRentals1.TabIndex = 0
         '
         'Setup1
         '

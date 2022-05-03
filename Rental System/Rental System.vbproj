@@ -63,7 +63,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>rent_logo-removebg-preview1.ico</ApplicationIcon>
+    <ApplicationIcon>—Pngtree—vector rent icon_3774186.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -310,10 +310,28 @@
     <Compile Include="Pages\Customer.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Pages\CustomerPayment.Designer.vb">
+      <DependentUpon>CustomerPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CustomerPayment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\newRent.Designer.vb">
+      <DependentUpon>newRent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newRent.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Pages\Product.Designer.vb">
       <DependentUpon>Product.vb</DependentUpon>
     </Compile>
     <Compile Include="Pages\Product.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\RecieveItems.Designer.vb">
+      <DependentUpon>RecieveItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RecieveItems.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Pages\RecieveRentals.Designer.vb">
@@ -332,6 +350,12 @@
       <DependentUpon>RentalReports.vb</DependentUpon>
     </Compile>
     <Compile Include="Pages\RentalReports.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\RentDashboard.Designer.vb">
+      <DependentUpon>RentDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RentDashboard.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Pages\rptRentalsperDate.vb">
@@ -407,8 +431,17 @@
     <EmbeddedResource Include="Pages\Customer.resx">
       <DependentUpon>Customer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CustomerPayment.resx">
+      <DependentUpon>CustomerPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\newRent.resx">
+      <DependentUpon>newRent.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Product.resx">
       <DependentUpon>Product.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\RecieveItems.resx">
+      <DependentUpon>RecieveItems.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\RecieveRentals.resx">
       <DependentUpon>RecieveRentals.vb</DependentUpon>
@@ -418,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\RentalReports.resx">
       <DependentUpon>RentalReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\RentDashboard.resx">
+      <DependentUpon>RentDashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\rptRentalsperDate.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -482,6 +518,7 @@
       <DependentUpon>RentalDB.mdf</DependentUpon>
     </Content>
     <Content Include="rent_logo-removebg-preview1.ico" />
+    <Content Include="—Pngtree—vector rent icon_3774186.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -47,9 +47,12 @@ Partial Class Product
         Me.BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.RecieveItems1 = New Rental_System.RecieveItems()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BunifuSnackbar1
@@ -124,6 +127,7 @@ Partial Class Product
         'Guna2TabControl1
         '
         Me.Guna2TabControl1.Controls.Add(Me.TabPage1)
+        Me.Guna2TabControl1.Controls.Add(Me.TabPage2)
         Me.Guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2TabControl1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2TabControl1.ItemSize = New System.Drawing.Size(180, 40)
@@ -451,6 +455,26 @@ Partial Class Product
         Me.BunifuDataGridView1.TabIndex = 39
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.RecieveItems1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 44)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(753, 377)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Recieve Products"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'RecieveItems1
+        '
+        Me.RecieveItems1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RecieveItems1.Location = New System.Drawing.Point(3, 3)
+        Me.RecieveItems1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RecieveItems1.Name = "RecieveItems1"
+        Me.RecieveItems1.Size = New System.Drawing.Size(747, 371)
+        Me.RecieveItems1.TabIndex = 0
+        '
         'Product
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -462,6 +486,7 @@ Partial Class Product
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -485,4 +510,6 @@ Partial Class Product
     Friend WithEvents BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuThinButton22 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents RecieveItems1 As RecieveItems
 End Class

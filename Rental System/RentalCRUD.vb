@@ -63,6 +63,29 @@ Module RentalCRUD
             RentCon.Close()
         End Try
     End Sub
+    Public Sub DashboardValues(ByVal sql As String, lbl As Label)
+        Try
+            If RentCon.State = ConnectionState.Closed Then
+                RentCon.Open()
+            End If
+            'HOLDS THE DATA TO BE EXECUTED
+            With cmd
+                .Connection = RentCon
+                .CommandText = sql
+                'EXECUTE THE DATA
+                result = cmd.ExecuteNonQuery
+                tbl = New DataTable
+                da = New SqlDataAdapter(cmd)
+                da.Fill(tbl)
+                lbl.Text = tbl.Rows(0)(0).ToString
+            End With
+            RentCon.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            RentCon.Close()
+        End Try
+    End Sub
     Public Sub ComboFeed(ByVal sql As String, combo As ComboBox, row As Integer)
         If RentCon.State = ConnectionState.Closed Then
             RentCon.Open()
@@ -80,35 +103,7 @@ Module RentalCRUD
         RentCon.Close()
     End Sub
 
-    Public Sub CheckBooking(ByVal sql As String)
-        Try
-            If RentCon.State = ConnectionState.Closed Then
-                RentCon.Open()
-            End If
-            cmd = New SqlCommand(sql, RentCon)
-            da = New SqlDataAdapter(cmd)
-            tbl = New DataTable()
-            da.Fill(tbl)
-            For k = 0 To tbl.Rows.Count - 1
-                If CDate(tbl.Rows(k)(1).ToString) <= DateTime.Now.ToShortDateString Then
-                    Insert("update Drivers set Status = '" + "Available" + "' where DriverNO='" + tbl.Rows(k)(2).ToString + "'")
-                    Insert("update Vehicle set Status = '" + "Available" + "' where VehicleID='" + tbl.Rows(k)(3).ToString + "'")
-                    Dim out As DateTime
-                    cmd = New SqlCommand("delete from Activetrips where arrivaldate <=@date", RentCon)
-                    DateTime.TryParseExact(Date.Now.ToString("dd/MM/yyyy"), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out)
-                    cmd.Parameters.Add("date", sqlDbType:=SqlDbType.Date).Value = out
-                    da.SelectCommand = cmd
-                    da.Fill(tbl)
 
-                End If
-            Next
-
-            RentCon.Close()
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-    End Sub
 
     'Public Sub Report(ByVal sql As String, ByVal sql2 As String, ByVal tbl As String, ByVal tbl2 As String, rpt As ReportClass, rptviewer As CrystalReportViewer)
     '    Try

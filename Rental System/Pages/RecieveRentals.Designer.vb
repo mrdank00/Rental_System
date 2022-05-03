@@ -43,6 +43,16 @@ Partial Class RecieveRentals
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.gvRentals = New Bunifu.UI.WinForms.BunifuDataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ItemCost = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Category = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gvRentalConfig = New Bunifu.UI.WinForms.BunifuDataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -62,16 +72,6 @@ Partial Class RecieveRentals
         Me.ckPreview = New Bunifu.UI.WinForms.BunifuCheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ckPrint = New Bunifu.UI.WinForms.BunifuCheckBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ItemCost = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Category = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.gvRentals, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gvRentalConfig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -285,6 +285,75 @@ Partial Class RecieveRentals
         Me.gvRentals.TabIndex = 38
         Me.gvRentals.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ItemName"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 110
+        '
+        'ItemCost
+        '
+        Me.ItemCost.HeaderText = "ItemCost"
+        Me.ItemCost.Name = "ItemCost"
+        Me.ItemCost.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "QtyRented"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 112
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "QtyReturned"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 127
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "QtyMissing"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 115
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Amount"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 92
+        '
+        'Category
+        '
+        Me.Category.HeaderText = "Category"
+        Me.Category.Name = "Category"
+        Me.Category.ReadOnly = True
+        Me.Category.Width = 101
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Colour"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 82
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Size"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 62
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Price"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 69
+        '
         'gvRentalConfig
         '
         Me.gvRentalConfig.AllowCustomTheming = False
@@ -294,7 +363,7 @@ Partial Class RecieveRentals
         Me.gvRentalConfig.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.gvRentalConfig.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.gvRentalConfig.BackgroundColor = System.Drawing.Color.White
+        Me.gvRentalConfig.BackgroundColor = System.Drawing.Color.Silver
         Me.gvRentalConfig.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.gvRentalConfig.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.gvRentalConfig.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -678,75 +747,6 @@ Partial Class RecieveRentals
         Me.ckPrint.TabIndex = 74
         Me.ckPrint.ThreeState = False
         Me.ckPrint.ToolTipText = Nothing
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ItemName"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 110
-        '
-        'ItemCost
-        '
-        Me.ItemCost.HeaderText = "ItemCost"
-        Me.ItemCost.Name = "ItemCost"
-        Me.ItemCost.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "QtyRented"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 112
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "QtyReturned"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 127
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "QtyMissing"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 115
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Amount"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 92
-        '
-        'Category
-        '
-        Me.Category.HeaderText = "Category"
-        Me.Category.Name = "Category"
-        Me.Category.ReadOnly = True
-        Me.Category.Width = 101
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Colour"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 82
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Size"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 62
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Price"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 69
         '
         'RecieveRentals
         '
