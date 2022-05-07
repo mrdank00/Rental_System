@@ -82,4 +82,12 @@
         Next
         lblTotal.Text = sum
     End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
+        Reload("select * from Stockmast where itemname like '%" + ComboBox1.Text + "%' ", BunifuDataGridView1)
+    End Sub
 End Class

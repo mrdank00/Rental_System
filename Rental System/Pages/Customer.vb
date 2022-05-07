@@ -108,5 +108,7 @@
         End Try
     End Sub
 
-
+    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
+        Reload("select * from customers where name like '%" + ComboBox1.Text + "%'", BunifuDataGridView1)
+    End Sub
 End Class

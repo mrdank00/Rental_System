@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class RentDashboard
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class RentDashboard
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RentDashboard))
         Me.BunifuShadowPanel1 = New Bunifu.UI.WinForms.BunifuShadowPanel()
@@ -43,7 +43,6 @@ Partial Class RentDashboard
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BunifuShadowPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuShadowPanel2.SuspendLayout()
@@ -54,7 +53,6 @@ Partial Class RentDashboard
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuShadowPanel5.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuShadowPanel1
@@ -347,20 +345,10 @@ Partial Class RentDashboard
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "0"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(85, 247)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(351, 134)
-        Me.DataGridView1.TabIndex = 7
-        Me.DataGridView1.Visible = False
-        '
         'RentDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.BunifuShadowPanel5)
         Me.Controls.Add(Me.BunifuShadowPanel3)
         Me.Controls.Add(Me.BunifuShadowPanel2)
@@ -383,7 +371,6 @@ Partial Class RentDashboard
         Me.BunifuShadowPanel5.ResumeLayout(False)
         Me.BunifuShadowPanel5.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -408,5 +395,4 @@ Partial Class RentDashboard
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents DataGridView1 As DataGridView
 End Class

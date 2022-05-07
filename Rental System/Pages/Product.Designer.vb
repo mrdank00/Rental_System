@@ -24,12 +24,24 @@ Partial Class Product
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Product))
+        Dim BorderEdges1 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BunifuSnackbar1 = New Bunifu.UI.WinForms.BunifuSnackbar(Me.components)
         Me.Guna2TabControl1 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.BunifuButton21 = New Bunifu.UI.WinForms.BunifuButton.BunifuButton2()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbSize = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -47,8 +59,8 @@ Partial Class Product
         Me.BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuDataGridView1 = New Bunifu.UI.WinForms.BunifuDataGridView()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.RecieveItems1 = New Rental_System.RecieveItems()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.BunifuDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,6 +169,17 @@ Partial Class Product
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.BunifuButton21)
+        Me.TabPage1.Controls.Add(Me.Label11)
+        Me.TabPage1.Controls.Add(Me.ComboBox4)
+        Me.TabPage1.Controls.Add(Me.Label10)
+        Me.TabPage1.Controls.Add(Me.ComboBox3)
+        Me.TabPage1.Controls.Add(Me.Label9)
+        Me.TabPage1.Controls.Add(Me.Label8)
+        Me.TabPage1.Controls.Add(Me.ComboBox2)
+        Me.TabPage1.Controls.Add(Me.ComboBox1)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.TextBox1)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.cbSize)
         Me.TabPage1.Controls.Add(Me.Label6)
@@ -182,6 +205,204 @@ Partial Class Product
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Manage Items"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'BunifuButton21
+        '
+        Me.BunifuButton21.AllowAnimations = True
+        Me.BunifuButton21.AllowMouseEffects = True
+        Me.BunifuButton21.AllowToggling = False
+        Me.BunifuButton21.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BunifuButton21.AnimationSpeed = 200
+        Me.BunifuButton21.AutoGenerateColors = False
+        Me.BunifuButton21.AutoRoundBorders = False
+        Me.BunifuButton21.AutoSizeLeftIcon = True
+        Me.BunifuButton21.AutoSizeRightIcon = True
+        Me.BunifuButton21.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuButton21.BackColor1 = System.Drawing.Color.DodgerBlue
+        Me.BunifuButton21.BackgroundImage = CType(resources.GetObject("BunifuButton21.BackgroundImage"), System.Drawing.Image)
+        Me.BunifuButton21.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid
+        Me.BunifuButton21.ButtonText = "Reset"
+        Me.BunifuButton21.ButtonTextMarginLeft = 0
+        Me.BunifuButton21.ColorContrastOnClick = 45
+        Me.BunifuButton21.ColorContrastOnHover = 45
+        Me.BunifuButton21.Cursor = System.Windows.Forms.Cursors.Default
+        BorderEdges1.BottomLeft = True
+        BorderEdges1.BottomRight = True
+        BorderEdges1.TopLeft = True
+        BorderEdges1.TopRight = True
+        Me.BunifuButton21.CustomizableEdges = BorderEdges1
+        Me.BunifuButton21.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.BunifuButton21.DisabledBorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
+        Me.BunifuButton21.DisabledFillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.BunifuButton21.DisabledForecolor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.BunifuButton21.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed
+        Me.BunifuButton21.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BunifuButton21.ForeColor = System.Drawing.Color.White
+        Me.BunifuButton21.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BunifuButton21.IconLeftCursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuButton21.IconLeftPadding = New System.Windows.Forms.Padding(11, 3, 3, 3)
+        Me.BunifuButton21.IconMarginLeft = 11
+        Me.BunifuButton21.IconPadding = 10
+        Me.BunifuButton21.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BunifuButton21.IconRightCursor = System.Windows.Forms.Cursors.Default
+        Me.BunifuButton21.IconRightPadding = New System.Windows.Forms.Padding(3, 3, 7, 3)
+        Me.BunifuButton21.IconSize = 25
+        Me.BunifuButton21.IdleBorderColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuButton21.IdleBorderRadius = 25
+        Me.BunifuButton21.IdleBorderThickness = 1
+        Me.BunifuButton21.IdleFillColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuButton21.IdleIconLeftImage = Nothing
+        Me.BunifuButton21.IdleIconRightImage = Nothing
+        Me.BunifuButton21.IndicateFocus = False
+        Me.BunifuButton21.Location = New System.Drawing.Point(662, 207)
+        Me.BunifuButton21.Name = "BunifuButton21"
+        Me.BunifuButton21.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(191, Byte), Integer))
+        Me.BunifuButton21.OnDisabledState.BorderRadius = 25
+        Me.BunifuButton21.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid
+        Me.BunifuButton21.OnDisabledState.BorderThickness = 1
+        Me.BunifuButton21.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.BunifuButton21.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.BunifuButton21.OnDisabledState.IconLeftImage = Nothing
+        Me.BunifuButton21.OnDisabledState.IconRightImage = Nothing
+        Me.BunifuButton21.onHoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuButton21.onHoverState.BorderRadius = 25
+        Me.BunifuButton21.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid
+        Me.BunifuButton21.onHoverState.BorderThickness = 1
+        Me.BunifuButton21.onHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(181, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BunifuButton21.onHoverState.ForeColor = System.Drawing.Color.White
+        Me.BunifuButton21.onHoverState.IconLeftImage = Nothing
+        Me.BunifuButton21.onHoverState.IconRightImage = Nothing
+        Me.BunifuButton21.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuButton21.OnIdleState.BorderRadius = 25
+        Me.BunifuButton21.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid
+        Me.BunifuButton21.OnIdleState.BorderThickness = 1
+        Me.BunifuButton21.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue
+        Me.BunifuButton21.OnIdleState.ForeColor = System.Drawing.Color.White
+        Me.BunifuButton21.OnIdleState.IconLeftImage = Nothing
+        Me.BunifuButton21.OnIdleState.IconRightImage = Nothing
+        Me.BunifuButton21.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.BunifuButton21.OnPressedState.BorderRadius = 25
+        Me.BunifuButton21.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid
+        Me.BunifuButton21.OnPressedState.BorderThickness = 1
+        Me.BunifuButton21.OnPressedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(144, Byte), Integer))
+        Me.BunifuButton21.OnPressedState.ForeColor = System.Drawing.Color.White
+        Me.BunifuButton21.OnPressedState.IconLeftImage = Nothing
+        Me.BunifuButton21.OnPressedState.IconRightImage = Nothing
+        Me.BunifuButton21.Size = New System.Drawing.Size(77, 30)
+        Me.BunifuButton21.TabIndex = 66
+        Me.BunifuButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BunifuButton21.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
+        Me.BunifuButton21.TextMarginLeft = 0
+        Me.BunifuButton21.TextPadding = New System.Windows.Forms.Padding(0)
+        Me.BunifuButton21.UseDefaultRadiusAndThickness = True
+        '
+        'Label11
+        '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(642, 187)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(80, 17)
+        Me.Label11.TabIndex = 65
+        Me.Label11.Text = "Sort by Size"
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(645, 207)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(94, 27)
+        Me.ComboBox4.TabIndex = 64
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(534, 187)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(97, 17)
+        Me.Label10.TabIndex = 63
+        Me.Label10.Text = "Sort by Colour"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(537, 207)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(94, 27)
+        Me.ComboBox3.TabIndex = 62
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(407, 187)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(112, 17)
+        Me.Label9.TabIndex = 61
+        Me.Label9.Text = "Sort by Category"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(30, 187)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(80, 17)
+        Me.Label8.TabIndex = 60
+        Me.Label8.Text = "Search Item"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(410, 207)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(109, 27)
+        Me.ComboBox2.TabIndex = 59
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(28, 207)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(335, 27)
+        Me.ComboBox1.TabIndex = 58
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(149, 75)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(84, 17)
+        Me.Label4.TabIndex = 57
+        Me.Label4.Text = "Cost of Item"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(152, 95)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(94, 27)
+        Me.TextBox1.TabIndex = 56
         '
         'Label3
         '
@@ -293,7 +514,7 @@ Partial Class Product
         Me.txtPrice.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrice.Location = New System.Drawing.Point(52, 98)
         Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.Size = New System.Drawing.Size(194, 27)
+        Me.txtPrice.Size = New System.Drawing.Size(80, 27)
         Me.txtPrice.TabIndex = 45
         '
         'Label1
@@ -401,7 +622,7 @@ Partial Class Product
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.BunifuDataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.BunifuDataGridView1.BackgroundColor = System.Drawing.Color.Silver
         Me.BunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.BunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.BunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -445,15 +666,24 @@ Partial Class Product
         Me.BunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue
         Me.BunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty
         Me.BunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White
-        Me.BunifuDataGridView1.Location = New System.Drawing.Point(28, 193)
+        Me.BunifuDataGridView1.Location = New System.Drawing.Point(28, 240)
         Me.BunifuDataGridView1.Name = "BunifuDataGridView1"
         Me.BunifuDataGridView1.ReadOnly = True
         Me.BunifuDataGridView1.RowHeadersVisible = False
         Me.BunifuDataGridView1.RowTemplate.Height = 40
         Me.BunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.BunifuDataGridView1.Size = New System.Drawing.Size(696, 164)
+        Me.BunifuDataGridView1.Size = New System.Drawing.Size(696, 117)
         Me.BunifuDataGridView1.TabIndex = 39
         Me.BunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light
+        '
+        'RecieveItems1
+        '
+        Me.RecieveItems1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RecieveItems1.Location = New System.Drawing.Point(3, 3)
+        Me.RecieveItems1.Margin = New System.Windows.Forms.Padding(4)
+        Me.RecieveItems1.Name = "RecieveItems1"
+        Me.RecieveItems1.Size = New System.Drawing.Size(747, 371)
+        Me.RecieveItems1.TabIndex = 0
         '
         'TabPage2
         '
@@ -465,15 +695,6 @@ Partial Class Product
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Recieve Products"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'RecieveItems1
-        '
-        Me.RecieveItems1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RecieveItems1.Location = New System.Drawing.Point(3, 3)
-        Me.RecieveItems1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.RecieveItems1.Name = "RecieveItems1"
-        Me.RecieveItems1.Size = New System.Drawing.Size(747, 371)
-        Me.RecieveItems1.TabIndex = 0
         '
         'Product
         '
@@ -510,6 +731,17 @@ Partial Class Product
     Friend WithEvents BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuThinButton22 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuDataGridView1 As Bunifu.UI.WinForms.BunifuDataGridView
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents BunifuButton21 As Bunifu.UI.WinForms.BunifuButton.BunifuButton2
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents RecieveItems1 As RecieveItems
 End Class

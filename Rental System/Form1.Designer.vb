@@ -111,7 +111,7 @@ Partial Class Form1
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.BunifuButton26)
         Me.Panel1.Controls.Add(Me.BunifuButton21)
         Me.Panel1.Controls.Add(Me.BunifuButton25)

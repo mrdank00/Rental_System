@@ -10,6 +10,7 @@ Public Class newRent
     Sub Display()
         Reload("Select * from Stockmast", BunifuDataGridView1)
         ComboFeed("Select name from customers", cbCustname, 0)
+        ComboFeed("select Itemname from stockmast where itemname like '%" + ComboBox1.Text + "%'", ComboBox1, 0)
     End Sub
 
     Private Sub gvRentals_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs)
@@ -269,5 +270,10 @@ Public Class newRent
             sum += gvRentals.Rows(k).Cells(3).Value
         Next
         lblTotal.Text = sum
+    End Sub
+
+    Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
+        Reload("select * from Stockmast where itemname like '%" + ComboBox1.Text + "%' ", BunifuDataGridView1)
+
     End Sub
 End Class
